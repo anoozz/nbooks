@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IDeductionRepository : IBaseDao<Deduction>
+	public interface IDeductionRepository : IBaseRepository<Deduction>
 	{
 	}
 }

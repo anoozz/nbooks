@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ICountryRepository : IBaseDao<Country>
+	public interface ICountryRepository : IBaseRepository<Country>
 	{
 		IList<Country> FindActive();
 	}

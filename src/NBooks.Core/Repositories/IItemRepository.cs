@@ -10,7 +10,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IItemRepository : IBaseDao<Item>
+	public interface IItemRepository : IBaseRepository<Item>
 	{
 		void MakeInactive(Item item);
 		Item ReadByName(string name);

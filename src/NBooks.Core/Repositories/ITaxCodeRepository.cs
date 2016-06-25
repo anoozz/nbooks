@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ITaxCodeRepository : IBaseDao<TaxCode>
+	public interface ITaxCodeRepository : IBaseRepository<TaxCode>
 	{
 		void MakeInactive(TaxCode code);
 		IList<TaxCode> FindActive();

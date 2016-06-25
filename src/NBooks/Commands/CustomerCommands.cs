@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			CustomerListForm form = new CustomerListForm();
-			ICustomerRepository dao = new NHibernateCustomerDao();
+			ICustomerRepository dao = new NHibernateCustomerRepository();
 			form.CustomersList += delegate { form.Customers = dao.FindActive(); };
 			form.CustomerAdd += delegate { new AddCustomer().Run(); };
 			form.CustomerEdit += delegate(object sender, CustomerEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			CustomerCenterForm form = new CustomerCenterForm();
-			ICustomerRepository customerDao = new NHibernateCustomerDao();
+			ICustomerRepository customerDao = new NHibernateCustomerRepository();
 			form.CustomersList += delegate { form.Customers = customerDao.FindActive(); };
 			form.CustomerAdd += delegate { new AddCustomer().Run(); };
 			WorkbenchSingleton.AddChild(form);
@@ -51,7 +51,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			CustomerForm form = new CustomerForm();
-			ICustomerRepository dao = new NHibernateCustomerDao();
+			ICustomerRepository dao = new NHibernateCustomerRepository();
 			form.CustomerSave += delegate(object sender, CustomerEventArgs e) { 
 				dao.SaveOrUpdate(e.Customer);
 				form.Close();
@@ -84,7 +84,7 @@ namespace NBooks.Commands
 //			};
 //			WorkbenchSingleton.AddChild(view, "Edit Customer");
 			CustomerForm form = new CustomerForm(customer);
-			ICustomerRepository dao = new NHibernateCustomerDao();
+			ICustomerRepository dao = new NHibernateCustomerRepository();
 			form.CustomerSave += delegate(object sender, CustomerEventArgs e) { 
 				dao.SaveOrUpdate(e.Customer);
 				form.Close();

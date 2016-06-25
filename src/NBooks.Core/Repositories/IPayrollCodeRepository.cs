@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPayrollCodeRepository : IBaseDao<PayrollCode>
+	public interface IPayrollCodeRepository : IBaseRepository<PayrollCode>
 	{
 		void MakeInactive(PayrollCode code);
 		IList<PayrollCode> FindActive();

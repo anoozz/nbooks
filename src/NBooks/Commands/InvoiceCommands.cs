@@ -32,11 +32,11 @@ namespace NBooks.Commands
 			InvoiceForm invoiceForm = new InvoiceForm();
 			InvoiceItemForm itemForm = new InvoiceItemForm();
 			
-			IInvoiceRepository invoiceDao = new NHibernateInvoiceDao();
-			IVehicleTripRepository tripDao = new NHibernateVehicleTripDao();
-			ICustomerRepository customerDao = new NHibernateCustomerDao();
-			IItemRepository itemDao =  new NHibernateItemDao();
-			IAccountRepository accountDao = new NHibernateAccountDao();
+			IInvoiceRepository invoiceDao = new NHibernateInvoiceRepository();
+			IVehicleTripRepository tripDao = new NHibernateVehicleTripRepository();
+			ICustomerRepository customerDao = new NHibernateCustomerRepository();
+			IItemRepository itemDao =  new NHibernateItemRepository();
+			IAccountRepository accountDao = new NHibernateAccountRepository();
 			
 			invoiceForm.VehicleTripsList += delegate { invoiceForm.VehicleTrips = tripDao.FindAll(); };
 			invoiceForm.AccountsList += delegate { invoiceForm.Accounts = accountDao.FindAccountsReceivables(); };

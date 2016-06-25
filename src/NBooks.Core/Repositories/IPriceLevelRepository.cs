@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPriceLevelRepository : IBaseDao<PriceLevel>
+	public interface IPriceLevelRepository : IBaseRepository<PriceLevel>
 	{
 		void MakeInactive(PriceLevel level);
 		IList<PriceLevel> FindActive();

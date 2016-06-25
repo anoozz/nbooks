@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IWorkOrderRepository : IBaseDao<WorkOrder>
+	public interface IWorkOrderRepository : IBaseRepository<WorkOrder>
 	{
 		
 	}

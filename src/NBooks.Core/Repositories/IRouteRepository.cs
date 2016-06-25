@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IRouteRepository : IBaseDao<Route>
+	public interface IRouteRepository : IBaseRepository<Route>
 	{
 		void MakeInactive(Route route);
 		IList<Route> FindActive();

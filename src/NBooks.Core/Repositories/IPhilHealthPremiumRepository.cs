@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPhilHealthPremiumRepository : IBaseDao<PhilHealthPremium>
+	public interface IPhilHealthPremiumRepository : IBaseRepository<PhilHealthPremium>
 	{
 		void MakeInactive(PhilHealthPremium premium);
 		IList<PhilHealthPremium> FindActive();

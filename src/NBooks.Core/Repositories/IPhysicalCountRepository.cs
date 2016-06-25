@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPhysicalCountRepository : IBaseDao<PhysicalCount>
+	public interface IPhysicalCountRepository : IBaseRepository<PhysicalCount>
 	{
 	}
 }

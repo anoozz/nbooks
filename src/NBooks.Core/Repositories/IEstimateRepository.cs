@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IEstimateRepository : IBaseDao<Estimate>
+	public interface IEstimateRepository : IBaseRepository<Estimate>
 	{
 	}
 }

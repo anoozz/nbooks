@@ -12,7 +12,7 @@ using NBooks.Core.Repositories;
 
 namespace NBooks.Data.MySql
 {
-	public class MySqlRepository<T> : IBaseDao<T>
+	public class MySqlRepository<T> : IBaseRepository<T>
 	{
 		public MySqlRepository()
 		{

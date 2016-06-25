@@ -23,12 +23,12 @@ namespace NBooks.Commands
 			SalesReceiptForm receiptForm = new SalesReceiptForm();
 			SalesReceiptItemForm itemForm = new SalesReceiptItemForm();
 			
-			ISalesReceiptRepository receiptDao = new NHibernateSalesReceiptDao();
-			IVehicleTripRepository tripDao = new NHibernateVehicleTripDao();
-			IAccountRepository accountDao = new NHibernateAccountDao();
-			ICustomerRepository customerDao = new NHibernateCustomerDao();
-			IPaymentMethodRepository methodDao =  new NHibernatePaymentMethodDao();
-			IItemRepository itemDao = new NHibernateItemDao();
+			ISalesReceiptRepository receiptDao = new NHibernateSalesReceiptRepository();
+			IVehicleTripRepository tripDao = new NHibernateVehicleTripRepository();
+			IAccountRepository accountDao = new NHibernateAccountRepository();
+			ICustomerRepository customerDao = new NHibernateCustomerRepository();
+			IPaymentMethodRepository methodDao =  new NHibernatePaymentMethodRepository();
+			IItemRepository itemDao = new NHibernateItemRepository();
 			
 			receiptForm.VehicleTripsList += delegate { receiptForm.VehicleTrips = tripDao.FindAll(); };
 			receiptForm.ListAccounts += delegate { receiptForm.Accounts = accountDao.FindIncomeAccounts(); };
@@ -68,10 +68,10 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			SalesReceiptForm form = new SalesReceiptForm();
-			ISalesReceiptRepository receiptDao = new NHibernateSalesReceiptDao();
-			IVehicleTripRepository tripDao = new NHibernateVehicleTripDao();
-			ICustomerRepository customerDao = new NHibernateCustomerDao();
-			IPaymentMethodRepository methodDao =  new NHibernatePaymentMethodDao();
+			ISalesReceiptRepository receiptDao = new NHibernateSalesReceiptRepository();
+			IVehicleTripRepository tripDao = new NHibernateVehicleTripRepository();
+			ICustomerRepository customerDao = new NHibernateCustomerRepository();
+			IPaymentMethodRepository methodDao =  new NHibernatePaymentMethodRepository();
 			
 			form.VehicleTripsList += delegate { form.VehicleTrips = tripDao.FindAll(); };
 			form.PaymentMethodsList += delegate { form.PaymentMethods = methodDao.FindActive(); };

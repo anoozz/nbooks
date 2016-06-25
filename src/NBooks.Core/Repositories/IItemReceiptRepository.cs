@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IItemReceiptRepository : IBaseDao<ItemReceipt>
+	public interface IItemReceiptRepository : IBaseRepository<ItemReceipt>
 	{
 		IList<ItemReceipt> FindOpen();
 	}

@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ISalesReceiptRepository : IBaseDao<SalesReceipt>
+	public interface ISalesReceiptRepository : IBaseRepository<SalesReceipt>
 	{
 	}
 }

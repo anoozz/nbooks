@@ -19,7 +19,7 @@ namespace NBooks.Commands
 		{
 			try {
 				EmployeeListForm form = new EmployeeListForm();
-				IEmployeeRepository dao = new NHibernateEmployeeDao();
+				IEmployeeRepository dao = new NHibernateEmployeeRepository();
 				form.EmployeesList += delegate { form.Employees = dao.FindActive(); };
 				form.EmployeeAdd += delegate { new AddEmployee().Run(); };
 				form.EmployeeEdit += delegate(object sender, EmployeeEventArgs e) { 
@@ -45,7 +45,7 @@ namespace NBooks.Commands
 		{
 			try {
 				EmployeeForm form = new EmployeeForm();
-				IEmployeeRepository dao = new NHibernateEmployeeDao();
+				IEmployeeRepository dao = new NHibernateEmployeeRepository();
 				form.EmployeeSave += delegate(object sender, EmployeeEventArgs e) { 
 					dao.SaveOrUpdate(e.Employee);
 					form.Close();
@@ -71,7 +71,7 @@ namespace NBooks.Commands
 		{
 			try {
 				EmployeeForm form = new EmployeeForm(employee);
-				IEmployeeRepository dao = new NHibernateEmployeeDao();
+				IEmployeeRepository dao = new NHibernateEmployeeRepository();
 				form.EmployeeSave += delegate(object sender, EmployeeEventArgs e) { 
 					dao.SaveOrUpdate(e.Employee);
 					form.Close();

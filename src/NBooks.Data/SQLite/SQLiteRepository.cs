@@ -12,7 +12,7 @@ using NBooks.Core.Repositories;
 
 namespace NBooks.Data.SQLite
 {
-	public class SQLiteRepository<T> : IBaseDao<T>
+	public class SQLiteRepository<T> : IBaseRepository<T>
 	{
 		public SQLiteRepository()
 		{

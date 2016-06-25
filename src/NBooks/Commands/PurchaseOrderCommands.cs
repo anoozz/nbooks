@@ -27,8 +27,8 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			PurchaseOrderForm form = new PurchaseOrderForm();
-			IPurchaseOrderRepository orderDao = new NHibernatePurchaseOrderDao();
-			IVendorRepository vendorDao = new NHibernateVendorDao();
+			IPurchaseOrderRepository orderDao = new NHibernatePurchaseOrderRepository();
+			IVendorRepository vendorDao = new NHibernateVendorRepository();
 			
 			form.VendorsList += delegate { form.Vendors = vendorDao.FindActive(); };
 			form.PurchaseOrderSaveAndClose += delegate(object sender, PurchaseOrderEventArgs e) { 

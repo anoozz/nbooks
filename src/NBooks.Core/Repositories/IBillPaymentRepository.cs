@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IBillPaymentRepository : IBaseDao<BillPayment>
+	public interface IBillPaymentRepository : IBaseRepository<BillPayment>
 	{
 	}
 }

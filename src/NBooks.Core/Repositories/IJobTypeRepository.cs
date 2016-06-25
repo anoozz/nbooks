@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IJobTypeRepository : IBaseDao<JobType>
+	public interface IJobTypeRepository : IBaseRepository<JobType>
 	{
 		void MakeInactive(JobType type);
 		IList<JobType> FindActive();

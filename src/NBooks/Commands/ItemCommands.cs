@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			ItemListForm form = new ItemListForm();
-			IItemRepository dao = new NHibernateItemDao();
+			IItemRepository dao = new NHibernateItemRepository();
 			form.ItemsList += delegate { form.Items = dao.FindActive(); };
 			form.ItemAdd += delegate { new AddItem().Run(); };
 			form.ItemEdit += delegate(object sender, ItemEventArgs e) { 
@@ -39,9 +39,9 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			ItemForm form = new ItemForm();
-			IItemRepository itemDao = new NHibernateItemDao();
-			IUnitRepository unitDao = new NHibernateUnitDao();
-			IVendorRepository vendorDao = new NHibernateVendorDao();
+			IItemRepository itemDao = new NHibernateItemRepository();
+			IUnitRepository unitDao = new NHibernateUnitRepository();
+			IVendorRepository vendorDao = new NHibernateVendorRepository();
 			
 			form.UnitsList += delegate { form.Units = unitDao.FindActive(); };
 			form.VendorsList += delegate { form.Vendors = vendorDao.FindActive(); };
@@ -65,9 +65,9 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			ItemForm form = new ItemForm(item);
-			IItemRepository itemDao = new NHibernateItemDao();
-			IUnitRepository unitDao = new NHibernateUnitDao();
-			IVendorRepository vendorDao = new NHibernateVendorDao();
+			IItemRepository itemDao = new NHibernateItemRepository();
+			IUnitRepository unitDao = new NHibernateUnitRepository();
+			IVendorRepository vendorDao = new NHibernateVendorRepository();
 			
 			form.UnitsList += delegate { form.Units = unitDao.FindActive(); };
 			form.VendorsList += delegate { form.Vendors = vendorDao.FindActive(); };

@@ -67,7 +67,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VendorListForm form = new VendorListForm();
-			IVendorRepository dao = new NHibernateVendorDao();
+			IVendorRepository dao = new NHibernateVendorRepository();
 			form.VendorsList += delegate { form.Vendors = dao.FindActive(); };
 			form.VendorAdd += delegate { new AddVendor().Run(); };
 			form.VendorEdit += delegate(object sender, VendorEventArgs e) { 
@@ -88,7 +88,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VendorForm form = new VendorForm();
-			IVendorRepository dao = new NHibernateVendorDao();
+			IVendorRepository dao = new NHibernateVendorRepository();
 			form.VendorSave += delegate(object sender, VendorEventArgs e) { 
 				dao.SaveOrUpdate(e.Vendor);
 				form.Close();
@@ -109,7 +109,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VendorForm form = new VendorForm(vendor);
-			IVendorRepository dao = new NHibernateVendorDao();
+			IVendorRepository dao = new NHibernateVendorRepository();
 			form.VendorSave += delegate(object sender, VendorEventArgs e) { 
 				dao.SaveOrUpdate(e.Vendor);
 				form.Close();

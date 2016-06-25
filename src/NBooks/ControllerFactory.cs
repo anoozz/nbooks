@@ -20,7 +20,7 @@ namespace NBooks
 		{
 			switch (name) {
 				case "Item":
-					return new ItemController(new NHibernateItemDao(), new ItemForm());
+					return new ItemController(new NHibernateItemRepository(), new ItemForm());
 				default:
 					throw new NotSupportedException();
 			}

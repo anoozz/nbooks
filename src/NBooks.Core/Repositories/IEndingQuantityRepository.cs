@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IEndingQuantityRepository : IBaseDao<EndingQuantity>
+	public interface IEndingQuantityRepository : IBaseRepository<EndingQuantity>
 	{
 	}
 }

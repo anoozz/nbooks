@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IVehicleTripRepository : IBaseDao<VehicleTrip>
+	public interface IVehicleTripRepository : IBaseRepository<VehicleTrip>
 	{
 		
 	}

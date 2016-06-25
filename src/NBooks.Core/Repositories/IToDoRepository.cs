@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IToDoRepository : IBaseDao<ToDo>
+	public interface IToDoRepository : IBaseRepository<ToDo>
 	{
 		void MakeInactive(ToDo todo);
 		IList<ToDo> FindActive();

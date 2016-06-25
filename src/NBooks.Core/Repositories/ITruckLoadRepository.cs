@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ITruckLoadRepository : IBaseDao<TruckLoad>
+	public interface ITruckLoadRepository : IBaseRepository<TruckLoad>
 	{
 		
 	}

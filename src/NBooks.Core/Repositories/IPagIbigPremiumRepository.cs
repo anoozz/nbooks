@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPagIbigPremiumRepository : IBaseDao<PagIbigPremium>
+	public interface IPagIbigPremiumRepository : IBaseRepository<PagIbigPremium>
 	{
 		void MakeInactive(PagIbigPremium premium);
 		IList<PagIbigPremium> FindActive();

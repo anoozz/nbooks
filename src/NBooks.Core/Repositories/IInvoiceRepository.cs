@@ -10,7 +10,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IInvoiceRepository : IBaseDao<Invoice>
+	public interface IInvoiceRepository : IBaseRepository<Invoice>
 	{
 		IList<Invoice> FindOpen();
 		DataSet FindOpenDS();

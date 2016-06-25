@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IShiftRepository : IBaseDao<Shift>
+	public interface IShiftRepository : IBaseRepository<Shift>
 	{
 		void MakeInactive(Shift shift);
 		IList<Shift> FindActive();

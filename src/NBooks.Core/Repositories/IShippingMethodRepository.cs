@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IShippingMethodRepository : IBaseDao<ShippingMethod>
+	public interface IShippingMethodRepository : IBaseRepository<ShippingMethod>
 	{
 		void MakeInactive(ShippingMethod method);
 		IList<ShippingMethod> FindActive();

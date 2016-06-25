@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			DepartmentListForm form = new DepartmentListForm();
-			IDepartmentRepository dao = new NHibernateDepartmentDao();
+			IDepartmentRepository dao = new NHibernateDepartmentRepository();
 			form.DepartmentsList += delegate { form.Departments = dao.FindActive(); };
 			form.DepartmentAdd += delegate { new AddDepartment().Run(); };
 			form.DepartmentEdit += delegate(object sender, DepartmentEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			DepartmentForm form = new DepartmentForm();
-			IDepartmentRepository dao = new NHibernateDepartmentDao();
+			IDepartmentRepository dao = new NHibernateDepartmentRepository();
 			form.DepartmentSave += delegate(object sender, DepartmentEventArgs e) { 
 				dao.SaveOrUpdate(e.Department);
 				form.Close();
@@ -61,7 +61,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			DepartmentForm form = new DepartmentForm(department);
-			IDepartmentRepository dao = new NHibernateDepartmentDao();
+			IDepartmentRepository dao = new NHibernateDepartmentRepository();
 			form.DepartmentSave += delegate(object sender, DepartmentEventArgs e) { 
 				dao.SaveOrUpdate(e.Department);
 				form.Close();

@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ISSPremiumRepository : IBaseDao<SSPremium>
+	public interface ISSPremiumRepository : IBaseRepository<SSPremium>
 	{
 		void MakeInactive(SSPremium premium);
 		IList<SSPremium> FindActive();

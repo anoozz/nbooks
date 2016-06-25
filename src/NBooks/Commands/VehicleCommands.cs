@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VehicleListForm form = new VehicleListForm();
-			IVehicleRepository dao = new NHibernateVehicleDao();
+			IVehicleRepository dao = new NHibernateVehicleRepository();
 			form.VehiclesList += delegate { form.Vehicles = dao.FindActive(); };
 			form.VehicleAdd += delegate { new AddVehicle().Run(); };
 			form.VehicleEdit += delegate(object sender, VehicleEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VehicleForm form = new VehicleForm();
-			IVehicleRepository dao = new NHibernateVehicleDao();
+			IVehicleRepository dao = new NHibernateVehicleRepository();
 			form.VehicleSave += delegate(object sender, VehicleEventArgs e) { 
 				dao.SaveOrUpdate(e.Vehicle);
 				form.Close();
@@ -60,7 +60,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VehicleForm form = new VehicleForm(vehicle);
-			IVehicleRepository dao = new NHibernateVehicleDao();
+			IVehicleRepository dao = new NHibernateVehicleRepository();
 			form.VehicleSave += delegate(object sender, VehicleEventArgs e) { 
 				dao.SaveOrUpdate(e.Vehicle);
 				form.Close();

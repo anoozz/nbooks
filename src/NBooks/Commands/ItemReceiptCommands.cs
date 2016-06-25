@@ -27,8 +27,8 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			ItemReceiptForm2 form = new ItemReceiptForm2();
-			IItemReceiptRepository receiptDao = new NHibernateItemReceiptDao();
-			IVendorRepository vendorDao = new NHibernateVendorDao();
+			IItemReceiptRepository receiptDao = new NHibernateItemReceiptRepository();
+			IVendorRepository vendorDao = new NHibernateVendorRepository();
 			
 			form.VendorsList += delegate { form.Vendors = vendorDao.FindActive(); };
 			form.ItemReceiptSaveAndClose += delegate(object sender, ItemReceiptEventArgs e) { 

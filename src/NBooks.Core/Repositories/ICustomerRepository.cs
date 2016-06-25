@@ -10,7 +10,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ICustomerRepository : IBaseDao<Customer>
+	public interface ICustomerRepository : IBaseRepository<Customer>
 	{
 		void MakeInactive(Customer customer);
 		IList<Customer> FindActive();

@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IPaymentMethodRepository : IBaseDao<PaymentMethod>
+	public interface IPaymentMethodRepository : IBaseRepository<PaymentMethod>
 	{
 		void MakeInactive(PaymentMethod method);
 		IList<PaymentMethod> FindActive();

@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			TermsListForm form = new TermsListForm();
-			ITermsRepository dao = new NHibernateTermsDao();
+			ITermsRepository dao = new NHibernateTermsRepository();
 			form.TermsList += delegate { form.Terms = dao.FindActive(); };
 			form.TermsAdd += delegate { new AddTerms().Run(); };
 			form.TermsEdit += delegate(object sender, TermsEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			TermsForm form = new TermsForm();
-			ITermsRepository dao = new NHibernateTermsDao();
+			ITermsRepository dao = new NHibernateTermsRepository();
 			form.TermsSave += delegate(object sender, TermsEventArgs e) { 
 				dao.SaveOrUpdate(e.Terms);
 				form.Close();
@@ -60,7 +60,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			TermsForm form = new TermsForm(terms);
-			ITermsRepository dao = new NHibernateTermsDao();
+			ITermsRepository dao = new NHibernateTermsRepository();
 			form.TermsSave += delegate(object sender, TermsEventArgs e) { 
 				dao.SaveOrUpdate(e.Terms);
 				form.Close();

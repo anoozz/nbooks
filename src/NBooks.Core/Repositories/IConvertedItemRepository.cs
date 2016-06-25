@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IConvertedItemRepository : IBaseDao<ConvertedItem>
+	public interface IConvertedItemRepository : IBaseRepository<ConvertedItem>
 	{
 	}
 }

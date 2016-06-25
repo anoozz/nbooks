@@ -18,9 +18,9 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			PaymentForm form = new PaymentForm();
-			IPaymentRepository paymentDao = new NHibernatePaymentDao();
-			ICustomerRepository customerDao = new NHibernateCustomerDao();
-			IPaymentMethodRepository methodDao = new NHibernatePaymentMethodDao();
+			IPaymentRepository paymentDao = new NHibernatePaymentRepository();
+			ICustomerRepository customerDao = new NHibernateCustomerRepository();
+			IPaymentMethodRepository methodDao = new NHibernatePaymentMethodRepository();
 			
 			form.CustomersList += delegate { form.Customers = customerDao.FindActive(); };
 			form.PaymentMethodsList += delegate { form.PaymentMethods = methodDao.FindActive(); };

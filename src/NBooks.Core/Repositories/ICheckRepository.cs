@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ICheckRepository : IBaseDao<Check>
+	public interface ICheckRepository : IBaseRepository<Check>
 	{
 	}
 }

@@ -8,7 +8,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface ITimesheetRepository : IBaseDao<Timesheet>
+	public interface ITimesheetRepository : IBaseRepository<Timesheet>
 	{
 	}
 }

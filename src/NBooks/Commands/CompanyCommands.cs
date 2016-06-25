@@ -36,8 +36,8 @@ namespace NBooks.Commands
 						NHibernateHelper.CloseSession();
 						NHibernateHelper.Configuration = new SQLiteDatabase(con.ConnectionString).CreateConfiguration();
 						
-						new NHibernateCompanyDao().SaveOrUpdate(f.Company);
-						new NHibernateUserDao().SaveOrUpdate(new User("admin", "root"));
+						new NHibernateCompanyRepository().SaveOrUpdate(f.Company);
+						new NHibernateUserRepository().SaveOrUpdate(new User("admin", "root"));
 					}
 				}
 			};
@@ -84,8 +84,8 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			CompanyForm form = new CompanyForm(company);
-			ICompanyRepository companyDao = new NHibernateCompanyDao();
-			ICountryRepository countryDao = new NHibernateCountryDao();
+			ICompanyRepository companyDao = new NHibernateCompanyRepository();
+			ICountryRepository countryDao = new NHibernateCountryRepository();
 			
 			form.CountriesList += delegate { form.Countries = countryDao.FindActive(); };
 			form.LegalCountriesList += delegate { form.LegalCountries = countryDao.FindActive(); };

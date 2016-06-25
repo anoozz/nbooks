@@ -21,7 +21,7 @@ namespace Core.Dao
 	using System.Collections.Generic;
 	using System.Data;
 	
-	public interface IBaseDao<T>
+	public interface IBaseRepository<T>
 	{
 		void SaveOrUpdate(T t);
 		void Delete(T t);

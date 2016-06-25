@@ -22,7 +22,7 @@ namespace NBooks.Tests.Models
 		}
 	}
 	
-	public class BaseRepositoryStub<T> : IBaseDao<T>
+	public class BaseRepositoryStub<T> : IBaseRepository<T>
     {
         public BaseRepositoryStub()
         {

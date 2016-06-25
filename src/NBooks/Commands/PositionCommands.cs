@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			PositionListForm form = new PositionListForm();
-			IPositionRepository dao = new NHibernatePositionDao();
+			IPositionRepository dao = new NHibernatePositionRepository();
 			form.PositionsList += delegate { form.Positions = dao.FindActive(); };
 			form.PositionAdd += delegate { new AddPosition().Run(); };
 			form.PositionEdit += delegate(object sender, PositionEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			PositionForm form = new PositionForm();
-			IPositionRepository dao = new NHibernatePositionDao();
+			IPositionRepository dao = new NHibernatePositionRepository();
 			form.PositionSave += delegate(object sender, PositionEventArgs e) { 
 				dao.SaveOrUpdate(e.Position);
 				form.Close();
@@ -60,7 +60,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			PositionForm form = new PositionForm(position);
-			IPositionRepository dao = new NHibernatePositionDao();
+			IPositionRepository dao = new NHibernatePositionRepository();
 			form.PositionSave += delegate(object sender, PositionEventArgs e) { 
 				dao.SaveOrUpdate(e.Position);
 				form.Close();

@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IDeductionTypeRepository : IBaseDao<DeductionType>
+	public interface IDeductionTypeRepository : IBaseRepository<DeductionType>
 	{
 		void MakeInactive(DeductionType type);
 		IList<DeductionType> FindActive();

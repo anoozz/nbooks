@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IBranchRepository : IBaseDao<Branch>
+	public interface IBranchRepository : IBaseRepository<Branch>
 	{
 	}
 }

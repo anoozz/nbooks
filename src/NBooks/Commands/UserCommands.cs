@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UserListForm form = new UserListForm();
-			IUserRepository dao = new NHibernateUserDao();
+			IUserRepository dao = new NHibernateUserRepository();
 			form.UsersList += delegate { form.Users = dao.FindActive(); };
 			WorkbenchSingleton.AddDialog(form);
 		}
@@ -126,7 +126,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UserForm form = new UserForm();
-			IUserRepository dao = new NHibernateUserDao();
+			IUserRepository dao = new NHibernateUserRepository();
 			WorkbenchSingleton.AddDialog(form);
 		}
 	}
@@ -143,7 +143,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UserForm form = new UserForm(user);
-			IUserRepository dao = new NHibernateUserDao();
+			IUserRepository dao = new NHibernateUserRepository();
 			WorkbenchSingleton.AddDialog(form, "Edit User");
 		}
 	}

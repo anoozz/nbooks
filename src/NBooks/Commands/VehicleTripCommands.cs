@@ -18,8 +18,8 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VehicleTripForm form = new VehicleTripForm();
-			IVehicleTripRepository tripDao = new NHibernateVehicleTripDao();
-			IVehicleRepository vehicleDao = new NHibernateVehicleDao();
+			IVehicleTripRepository tripDao = new NHibernateVehicleTripRepository();
+			IVehicleRepository vehicleDao = new NHibernateVehicleRepository();
 			form.VehiclesList += delegate { form.Vehicles = vehicleDao.FindAll(); };
 			form.VehicleTripSaveAndClose += delegate(object sender, VehicleTripEventArgs e) { 
 				tripDao.SaveOrUpdate(e.VehicleTrip);
@@ -34,7 +34,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			VehicleTripListForm form = new VehicleTripListForm();
-			IVehicleTripRepository dao = new NHibernateVehicleTripDao();
+			IVehicleTripRepository dao = new NHibernateVehicleTripRepository();
 			form.VehicleTripsList += delegate { form.VehicleTrips = dao.FindAll(); };
 			WorkbenchSingleton.AddChild(form);
 		}

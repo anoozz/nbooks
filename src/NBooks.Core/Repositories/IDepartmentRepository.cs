@@ -9,7 +9,7 @@ using NBooks.Core.Models;
 
 namespace NBooks.Core.Repositories
 {
-	public interface IDepartmentRepository : IBaseDao<Department>
+	public interface IDepartmentRepository : IBaseRepository<Department>
 	{
 		void MakeInactive(Department department);
 		IList<Department> FindActive();

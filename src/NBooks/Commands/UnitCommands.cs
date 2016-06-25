@@ -18,7 +18,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UnitListForm form = new UnitListForm();
-			IUnitRepository dao = new NHibernateUnitDao();
+			IUnitRepository dao = new NHibernateUnitRepository();
 			form.UnitsList += delegate { form.Units = dao.FindActive(); };
 			form.UnitAdd += delegate { new AddUnit().Run(); };
 			form.UnitEdit += delegate(object sender, UnitEventArgs e) { 
@@ -39,7 +39,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UnitForm form = new UnitForm();
-			IUnitRepository dao = new NHibernateUnitDao();
+			IUnitRepository dao = new NHibernateUnitRepository();
 			form.UnitSave += delegate(object sender, UnitEventArgs e) { 
 				dao.SaveOrUpdate(e.Unit);
 				form.Close();
@@ -60,7 +60,7 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			UnitForm form = new UnitForm(unit);
-			IUnitRepository dao = new NHibernateUnitDao();
+			IUnitRepository dao = new NHibernateUnitRepository();
 			form.UnitSave += delegate(object sender, UnitEventArgs e) { 
 				dao.SaveOrUpdate(e.Unit);
 				form.Close();
