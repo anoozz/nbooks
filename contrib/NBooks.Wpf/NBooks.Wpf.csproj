@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{72B3639F-2585-4826-B1E9-4DB67D78C2B6}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NBooks.Wpf</RootNamespace>
+    <AssemblyName>nbooksw</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\bin</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AccountCommands.cs" />
+    <Compile Include="Commands\BillCommands.cs" />
+    <Compile Include="Commands\CustomerCommands.cs" />
+    <Compile Include="Commands\EmployeeCommands.cs" />
+    <Compile Include="Commands\FileCommands.cs" />
+    <Compile Include="Commands\HelpCommands.cs" />
+    <Compile Include="Commands\InvoiceCommands.cs" />
+    <Compile Include="Commands\ItemCommands.cs" />
+    <Compile Include="Commands\ItemReceiptCommands.cs" />
+    <Compile Include="Commands\PurchaseOrderCommands.cs" />
+    <Compile Include="Commands\VehicleCommands.cs" />
+    <Compile Include="Commands\VendorCommands.cs" />
+    <Compile Include="Commands\WindowCommands.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="Util\WpfUtility.cs" />
+    <Compile Include="Views\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AccountListWindow.xaml.cs">
+      <DependentUpon>AccountListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AccountWindow.xaml.cs">
+      <DependentUpon>AccountWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BillPaymentWindow.xaml.cs">
+      <DependentUpon>BillPaymentWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BillWindow.xaml.cs">
+      <DependentUpon>BillWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryListWindow.xaml.cs">
+      <DependentUpon>CategoryListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryWindow.xaml.cs">
+      <DependentUpon>CategoryWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CheckWindow.xaml.cs">
+      <DependentUpon>CheckWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ClassListWindow.xaml.cs">
+      <DependentUpon>ClassListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ClassWindow.xaml.cs">
+      <DependentUpon>ClassWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CompanyWindow.xaml.cs">
+      <DependentUpon>CompanyWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerCenterWindow.xaml.cs">
+      <DependentUpon>CustomerCenterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerListWindow.xaml.cs">
+      <DependentUpon>CustomerListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerMessageListWindow.xaml.cs">
+      <DependentUpon>CustomerMessageListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerMessageWindow.xaml.cs">
+      <DependentUpon>CustomerMessageWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerTypeListWindow.xaml.cs">
+      <DependentUpon>CustomerTypeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerTypeWindow.xaml.cs">
+      <DependentUpon>CustomerTypeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerWindow.xaml.cs">
+      <DependentUpon>CustomerWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\DeductionTypeListWindow.xaml.cs">
+      <DependentUpon>DeductionTypeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\DeductionTypeWindow.xaml.cs">
+      <DependentUpon>DeductionTypeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\DepartmentListWindow.xaml.cs">
+      <DependentUpon>DepartmentListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\DepartmentWindow.xaml.cs">
+      <DependentUpon>DepartmentWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeCenterWindow.xaml.cs">
+      <DependentUpon>EmployeeCenterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeListWindow.xaml.cs">
+      <DependentUpon>EmployeeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeListWindow.xaml.cs">
+      <DependentUpon>EmployeeTypeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeWindow.xaml.cs">
+      <DependentUpon>EmployeeTypeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeWindow.xaml.cs">
+      <DependentUpon>EmployeeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\EstimateWindow.xaml.cs">
+      <DependentUpon>EstimateWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceWindow.xaml.cs">
+      <DependentUpon>InvoiceWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ItemListWindow.xaml.cs">
+      <DependentUpon>ItemListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptWindow.xaml.cs">
+      <DependentUpon>ItemReceiptWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ItemWindow.xaml.cs">
+      <DependentUpon>ItemWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\JobTypeListWindow.xaml.cs">
+      <DependentUpon>JobTypeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\JobTypeWindow.xaml.cs">
+      <DependentUpon>JobTypeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OtherNameListWindow.xaml.cs">
+      <DependentUpon>OtherNameListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OtherNameWindow.xaml.cs">
+      <DependentUpon>OtherNameWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentMethodListWindow.xaml.cs">
+      <DependentUpon>PaymentMethodListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentMethodWindow.xaml.cs">
+      <DependentUpon>PaymentMethodWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentWindow.xaml.cs">
+      <DependentUpon>PaymentWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PriceLevelListWindow.xaml.cs">
+      <DependentUpon>PriceLevelListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PriceLevelWindow.xaml.cs">
+      <DependentUpon>PriceLevelWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderWindow.xaml.cs">
+      <DependentUpon>PurchaseOrderWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SalesOrderWindow.xaml.cs">
+      <DependentUpon>SalesOrderWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SalesReceiptWindow.xaml.cs">
+      <DependentUpon>SalesReceiptWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeListWindow.xaml.cs">
+      <DependentUpon>SalesTaxCodeListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeWindow.xaml.cs">
+      <DependentUpon>SalesTaxCodeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ShippingMethodListWindow.xaml.cs">
+      <DependentUpon>ShippingMethodListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ShippingMethodWindow.xaml.cs">
+      <DependentUpon>ShippingMethodWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\TermsListWindow.xaml.cs">
+      <DependentUpon>TermsListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\TermsWindow.xaml.cs">
+      <DependentUpon>TermsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ToDoListWindow.xaml.cs">
+      <DependentUpon>ToDoListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ToDoWindow.xaml.cs">
+      <DependentUpon>ToDoWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UnitListWindow.xaml.cs">
+      <DependentUpon>UnitListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UnitWindow.xaml.cs">
+      <DependentUpon>UnitWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UserListWindow.xaml.cs">
+      <DependentUpon>UserListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleListWindow.xaml.cs">
+      <DependentUpon>VehicleListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleTripWindow.xaml.cs">
+      <DependentUpon>VehicleTripWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleWindow.xaml.cs">
+      <DependentUpon>VehicleWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VendorCenterWindow.xaml.cs">
+      <DependentUpon>VendorCenterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VendorListWindow.xaml.cs">
+      <DependentUpon>VendorListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\VendorWindow.xaml.cs">
+      <DependentUpon>VendorWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\WorkersCompListWindow.xaml.cs">
+      <DependentUpon>WorkersCompListWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\WorkersCompWindow.xaml.cs">
+      <DependentUpon>WorkersCompWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml" />
+    <Page Include="Views\AboutWindow.xaml" />
+    <Page Include="Views\AccountListWindow.xaml" />
+    <Page Include="Views\AccountWindow.xaml" />
+    <Page Include="Views\BillPaymentWindow.xaml" />
+    <Page Include="Views\BillWindow.xaml" />
+    <Page Include="Views\CategoryListWindow.xaml" />
+    <Page Include="Views\CategoryWindow.xaml" />
+    <Page Include="Views\CheckWindow.xaml" />
+    <Page Include="Views\ClassListWindow.xaml" />
+    <Page Include="Views\ClassWindow.xaml" />
+    <Page Include="Views\CompanyWindow.xaml" />
+    <Page Include="Views\CustomerCenterWindow.xaml" />
+    <Page Include="Views\CustomerListWindow.xaml" />
+    <Page Include="Views\CustomerMessageListWindow.xaml" />
+    <Page Include="Views\CustomerMessageWindow.xaml" />
+    <Page Include="Views\CustomerTypeListWindow.xaml" />
+    <Page Include="Views\CustomerTypeWindow.xaml" />
+    <Page Include="Views\CustomerWindow.xaml" />
+    <Page Include="Views\DeductionTypeListWindow.xaml" />
+    <Page Include="Views\DeductionTypeWindow.xaml" />
+    <Page Include="Views\DepartmentListWindow.xaml" />
+    <Page Include="Views\DepartmentWindow.xaml" />
+    <Page Include="Views\EmployeeCenterWindow.xaml" />
+    <Page Include="Views\EmployeeListWindow.xaml" />
+    <Page Include="Views\EmployeeTypeListWindow.xaml" />
+    <Page Include="Views\EmployeeTypeWindow.xaml" />
+    <Page Include="Views\EmployeeWindow.xaml" />
+    <Page Include="Views\EstimateWindow.xaml" />
+    <Page Include="Views\InvoiceWindow.xaml" />
+    <Page Include="Views\ItemListWindow.xaml" />
+    <Page Include="Views\ItemReceiptWindow.xaml" />
+    <Page Include="Views\ItemWindow.xaml" />
+    <Page Include="Views\JobTypeListWindow.xaml" />
+    <Page Include="Views\JobTypeWindow.xaml" />
+    <Page Include="Views\OtherNameListWindow.xaml" />
+    <Page Include="Views\OtherNameWindow.xaml" />
+    <Page Include="Views\PaymentMethodListWindow.xaml" />
+    <Page Include="Views\PaymentMethodWindow.xaml" />
+    <Page Include="Views\PaymentWindow.xaml" />
+    <Page Include="Views\PriceLevelListWindow.xaml" />
+    <Page Include="Views\PriceLevelWindow.xaml" />
+    <Page Include="Views\PurchaseOrderWindow.xaml" />
+    <Page Include="Views\SalesOrderWindow.xaml" />
+    <Page Include="Views\SalesReceiptWindow.xaml" />
+    <Page Include="Views\SalesTaxCodeListWindow.xaml" />
+    <Page Include="Views\SalesTaxCodeWindow.xaml" />
+    <Page Include="Views\ShippingMethodListWindow.xaml" />
+    <Page Include="Views\ShippingMethodWindow.xaml" />
+    <Page Include="Views\TermsListWindow.xaml" />
+    <Page Include="Views\TermsWindow.xaml" />
+    <Page Include="Views\ToDoListWindow.xaml" />
+    <Page Include="Views\ToDoWindow.xaml" />
+    <Page Include="Views\UnitListWindow.xaml" />
+    <Page Include="Views\UnitWindow.xaml" />
+    <Page Include="Views\UserListWindow.xaml" />
+    <Page Include="Views\UserWindow.xaml" />
+    <Page Include="Views\VehicleListWindow.xaml" />
+    <Page Include="Views\VehicleTripWindow.xaml" />
+    <Page Include="Views\VehicleWindow.xaml" />
+    <Page Include="Views\VendorCenterWindow.xaml" />
+    <Page Include="Views\VendorListWindow.xaml" />
+    <Page Include="Views\VendorWindow.xaml" />
+    <Page Include="Views\WorkersCompListWindow.xaml" />
+    <Page Include="Views\WorkersCompWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands" />
+    <Folder Include="Util" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NBooks.Controllers\NBooks.Controllers.csproj">
+      <Project>{BB38411B-315A-45F2-82CC-F97A3D192FAA}</Project>
+      <Name>NBooks.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBooks.Core\NBooks.Core.csproj">
+      <Project>{E8F09F0D-DE0F-4B4C-9635-87E96225B7AD}</Project>
+      <Name>NBooks.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBooks.Data\NBooks.Data.csproj">
+      <Project>{981D5953-FB7A-4299-839A-15082AA082C9}</Project>
+      <Name>NBooks.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Bill" table="bills">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Vendor" class="Vendor" column="vendor_id" />
+		<property name="VendorAddress" column="vendor_address" />
+		<many-to-one name="Terms" class="Terms" column="terms_id" />
+		<property name="Memo" column="memo" />
+		<property name="RefNo" column="ref_no" />
+		<property name="DueDate" column="due_date" />
+		<bag name="Accounts" inverse="true" cascade="all-delete-orphan">
+			<key column="bill_id" />
+			<one-to-many class="BillAccount" />
+		</bag>
+	</class>
+	<class name="BillAccount" table="bills_accounts">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Bill" class="Bill" column="bill_id" />
+		<many-to-one name="Account" class="Account" column="account_id" />
+		<property name="Amount" column="amount" />
+	</class>
+</hibernate-mapping>

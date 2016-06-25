@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Customer" table="customers">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="Balance" column="balance" />
+		<property name="BalanceAsOf" column="balance_as_of" />
+		<property name="CompanyName" column="company_name" />
+		<component name="LegalName" class="Name">
+			<property name="Title" column="title" />
+			<property name="Last" column="last_name" />
+			<property name="First" column="first_name" />
+			<property name="Middle" column="middle_name" />
+		</component>
+		<property name="Address" column="address" />
+		<property name="ShipToAddress" column="ship_to_address" />
+		<property name="Contact" column="contact" />
+		<property name="Phone" column="phone" />
+		<property name="Fax" column="fax" />
+		<property name="AltPhone" column="alt_phone" />
+		<property name="AltContact" column="alt_contact" />
+		<property name="Email" column="email" />
+		<property name="CC" column="cc" />
+		<property name="Notes" column="notes" />
+		<property name="Inactive" column="inactive" />
+		<bag name="DiscountedItems" inverse="true" cascade="all-delete-orphan">
+			<key column="customer_id" />
+			<one-to-many class="CustomerDiscountedItem" />
+		</bag>
+	</class>
+	<class name="CustomerDiscountedItem" table="customers_discounted_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Customer" class="Customer" column="customer_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="Discount" column="discount" />
+	</class>
+</hibernate-mapping>

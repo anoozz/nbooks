@@ -1,0 +1,1 @@
+insert into payment_methods(name, type, inactive) values('Cash', 0, 0);

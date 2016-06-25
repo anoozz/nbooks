@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Period" table="periods">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="DateFrom" column="date_from" />
+		<property name="DateTo" column="date_to" />
+		<property name="Inactive" column="inactive" />
+		<bag name="Categories" inverse="true" cascade="all-delete-orphan">
+			<key column="period_id" />
+			<one-to-many class="PeriodCategory" />
+		</bag>
+	</class>
+	<class name="PeriodCategory" table="periods_categories">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Period" class="Period" column="period_id" />
+		<many-to-one name="Category" class="Category" column="category_id" />
+		<property name="Target" column="target_value" />
+	</class>
+</hibernate-mapping>

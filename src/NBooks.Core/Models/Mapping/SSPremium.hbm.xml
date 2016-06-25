@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="SSPremium" table="sss_premiums">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Code" column="code" />
+		<property name="RangeFrom" column="range_from" />
+		<property name="RangeTo" column="range_to" />
+		<property name="ER" column="er" />
+		<property name="EC" column="ec" />
+		<property name="EE" column="ee" />
+		<property name="Contribution" column="contribution" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

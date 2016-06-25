@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="PurchaseOrder" table="purchase_orders">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Vendor" class="Vendor" column="vendor_id" />
+		<property name="PreparedBy" column="prepared_by" />
+		<property name="ApprovedBy" column="approved_by" />
+		<property name="RefNo" column="reference_no" />
+		<many-to-one name="Creator" class="User" column="created_by" />
+		<many-to-one name="Updater" class="User" column="updated_by" />
+		<property name="CreationDate" column="creation_date" />
+		<property name="UpdateDate" column="update_date" />
+		<property name="Status" column="status" />
+		<bag name="Items" inverse="true" cascade="all-delete-orphan">
+			<key column="purchase_order_id" />
+			<one-to-many class="PurchaseOrderItem" />
+		</bag>
+	</class>
+	<class name="PurchaseOrderItem" table="purchase_orders_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Order" class="PurchaseOrder" column="purchase_order_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="Rate" column="rate" />
+		<property name="Quantity" column="quantity" />
+	</class>
+</hibernate-mapping>

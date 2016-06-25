@@ -1,0 +1,28 @@
+drop table if exists items;
+create table items(
+	id integer not null primary key,
+	name varchar(45),
+	sales_description varchar(45),
+	on_hand double,
+	unit_measure varchar(45),
+	sales_price double,
+	reorder_point double,
+	overstock_level double,
+	part_number varchar(45),
+	beginning_qty double,
+	tolarge_packing double,
+	inactive boolean,
+	ucs double,
+	preferred_vendor_id integer,
+	vendor_discount double,
+	purchase_description varchar(45),
+	cost double,
+	type smallint,
+	unit_id integer,
+	income_account_id integer,
+	cogs_account_id integer,
+	sales_tax_code_id integer,
+	asset_account_id integer,
+	total_value double,
+	value_as_of datetime
+);

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="EndingQuantity" table="ending_quantities">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<bag name="Items" inverse="true" cascade="all-delete-orphan">
+			<key column="ending_quantity_id" />
+			<one-to-many class="EndingQuantityItem" />
+		</bag>
+	</class>
+	<class name="EndingQuantityItem" table="ending_quantity_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Quantity" class="EndingQuantity" column="ending_quantity_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="Qty" column="quantity" />
+	</class>
+</hibernate-mapping>

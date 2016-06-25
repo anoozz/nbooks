@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Country" table="countries">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="ShortName" column="short_name" />
+		<property name="LongName" column="long_name" />
+		<bag name="States" inverse="true" cascade="all-delete-orphan">
+			<key column="country_id" />
+			<one-to-many class="State" />
+		</bag>
+	</class>
+	<class name="State" table="states">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Country" class="Country" column="country_id" />
+		<property name="ShortName" column="short_name" />
+	</class>
+</hibernate-mapping>

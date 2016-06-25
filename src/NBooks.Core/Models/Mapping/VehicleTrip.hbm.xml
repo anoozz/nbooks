@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="VehicleTrip" table="vehicle_trips">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="StartDate" column="start_date" />
+		<property name="EndDate" column="end_date" />
+		<property name="Notes" column="notes" />
+		<many-to-one name="Vehicle" class="Vehicle" column="vehicle_id" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

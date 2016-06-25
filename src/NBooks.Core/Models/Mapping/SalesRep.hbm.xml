@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="SalesRep" table="sales_reps">
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="Address" column="address" />
+		<property name="Phone" column="phone" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

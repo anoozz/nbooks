@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Account" table="accounts">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Type" column="type" />
+		<property name="Name" column="name" />
+		<property name="Description" column="description" />
+		<property name="Note" column="note" />
+		<property name="Balance" column="balance" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

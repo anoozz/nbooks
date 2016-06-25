@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="SalesInfo" table="sales_infos">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Route" class="Route" column="route_id" />
+		<many-to-one name="SalesRep" class="SalesRep" column="sales_rep_id" />
+		<many-to-one name="Customer" class="Customer" column="customer_id" />
+		<property name="PreparedBy" column="prepared_by" />
+		<property name="ReceivedBy" column="received_by" />
+		<property name="Status" column="status" />
+		<bag name="Details" inverse="true" cascade="all-delete-orphan">
+			<key column="sales_info_id" />
+			<one-to-many class="SalesInfoDetail" />
+		</bag>
+	</class>
+	<class name="SalesInfoDetail" table="sales_infos_details">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Info" class="SalesInfo" column="sales_info_id" />
+		<property name="CheckNo" column="check_no" />
+		<property name="Description" column="description" />
+		<property name="Amount" column="amount" />
+		<property name="Type" column="type" />
+	</class>
+</hibernate-mapping>

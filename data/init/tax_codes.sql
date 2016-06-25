@@ -1,0 +1,12 @@
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (1,'ZE','ZERO EXEMPTION',0,0);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (2,'SI','SINGLE',0,20000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (3,'HE','HEAD OF THE FAMILY',0,25000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (4,'MA','MARRIED EMPLOYEE',0,32000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (5,'HF1','HF W/ ONE CHILD',0,33000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (6,'HF2','HF W/ TWO CHILDREN',0,41000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (7,'HF3','HF W/ THREE CHILDREN',0,49000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (8,'HF4','HF W/ FOUR CHILDREN',0,57000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (9,'MA1','MARRIED W/ 1 CHILD',0,40000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (10,'MA2','MARRIED W/ 2 CHILDREN',0,48000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (11,'MA3','MARRIED W/ 3 CHILDREN',0,56000);
+insert into tax_codes(id,code,description,inactive,personal_exemption) values (12,'MA4','MARRIED W/ 4 CHILDREN',0,64000);

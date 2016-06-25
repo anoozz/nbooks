@@ -1,0 +1,1 @@
+insert into users(name, password, inactive) values('admin', 'root', 0);

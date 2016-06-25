@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Item" table="items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Type" column="type" />
+		<property name="Name" column="name" />
+		<many-to-one name="Unit" class="Unit" column="unit_id" />
+		<property name="PurchaseDescription" column="purchase_description" />
+		<property name="Cost" column="cost" />
+		<many-to-one name="COGSAccount" class="Account" column="cogs_account_id" />
+		<many-to-one name="PreferredVendor" class="Vendor" column="preferred_vendor_id" />
+		<property name="SalesDescription" column="sales_description" />
+		<property name="SalesPrice" column="sales_price" />
+		<many-to-one name="SalesTaxCode" class="SalesTaxCode" column="sales_tax_code_id" />
+		<many-to-one name="IncomeAccount" class="Account" column="income_account_id" />
+		<many-to-one name="AssetAccount" class="Account" column="asset_account_id" />
+		<property name="ReorderPoint" column="reorder_point" />
+		<property name="OnHand" column="on_hand" />
+		<property name="OverStockLevel" column="overstock_level" />
+		<property name="BeginningQty" column="beginning_qty" />
+		<property name="ToLargePacking" column="tolarge_packing" />
+		<property name="UCS" column="ucs" />
+		<property name="VendorDiscount" column="vendor_discount" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

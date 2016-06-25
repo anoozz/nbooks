@@ -1,0 +1,12 @@
+                                  TRUCK LOAD
+Date: __DATE__
+Salesman: __SALESMAN__
+Route: __ROUTE__
+Reference No: __REFNO__
+Customer: __CUSTOMER__
+Code          Description            Unit    Qty     Price      Disc     Amount
+-------------------------------------------------------------------------------
+__ITEMS__
+-------------------------------------------------------------------------------
+
+Prepared By: __PREPAREDBY__       Approved By: __APPPROVEDBY__

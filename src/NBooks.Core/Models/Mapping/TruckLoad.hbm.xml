@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="TruckLoad" table="truck_loads">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Route" class="Route" column="route_id" />
+		<many-to-one name="SalesRep" class="SalesRep" column="sales_rep_id" />
+		<many-to-one name="Customer" class="Customer" column="customer_id" />
+		<property name="TruckNo" column="truck_no" />
+		<property name="PreparedBy" column="prepared_by" />
+		<property name="ApprovedBy" column="approved_by" />
+		<property name="ReleasedBy" column="released_by" />
+		<property name="RecordedBy" column="recorded_by" />
+		<property name="Status" column="status" />
+		<property name="Remarks" column="remarks" />
+		<many-to-one name="Creator" class="User" column="created_by" />
+		<many-to-one name="Updater" class="User" column="updated_by" />
+		<property name="CreationDate" column="creation_date" />
+		<property name="UpdateDate" column="update_date" />
+		<bag name="Items" inverse="true" cascade="all-delete-orphan">
+			<key column="truck_load_id" />
+			<one-to-many class="TruckLoadItem" />
+		</bag>
+	</class>
+	<class name="TruckLoadItem" table="truck_loads_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Load" class="TruckLoad" column="truck_load_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="Quantity" column="quantity" />
+		<property name="Price" column="unit_price" />
+		<property name="Discount" column="discount" />
+	</class>
+</hibernate-mapping>

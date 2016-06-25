@@ -1,0 +1,9 @@
+* show company form
+* when ok is clicked, get the company instance
+* show database type form
+* feed the company instance and connection
+* save company
+
+f = new CompanyForm()
+if (WorkbenchSingleton.AddDialog(f) == DialogResult.OK)
+	Company c = f.Company

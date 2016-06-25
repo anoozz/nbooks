@@ -1,0 +1,12 @@
+questions
+=========
+* how is attachment of certificates be done?
+
+relationships
+=============
+* company (as clinic) has information.
+* company has customers (patients).
+* company can attach certificates and print customer records with it.
+* company has items (for selling, mostly services e.g. bracing, tooth canal, etc.)
+* company issues invoices (receivables) to customers with credit.
+* company enter sales receipts when cash is received.

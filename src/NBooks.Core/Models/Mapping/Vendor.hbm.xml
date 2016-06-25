@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Vendor" table="vendors">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="Address" column="address" />
+		<property name="Phone" column="phone" />
+		<property name="Balance" column="balance" />
+		<property name="Inactive" column="inactive" />
+		<!--<bag name="DiscountedItems" inverse="true" cascade="all-delete-orphan">
+    		<key column="VendorId"/>
+    		<one-to-many class="VendorDiscountedItem"/>
+    	</bag>-->
+	</class>
+	<class name="VendorDiscountedItem" table="vendor_discounted_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Vendor" class="Vendor" column="vendor_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="Discount" column="discount" />
+	</class>
+</hibernate-mapping>

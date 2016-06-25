@@ -1,0 +1,10 @@
+todos
+-----
+* sales receipt
+* invoice
+* payment
+* purchase order
+* item receipt
+* bill
+* bill payments
+* change namespaces in core library

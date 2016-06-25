@@ -1,0 +1,38 @@
+0.1.0.5
+-------
+* Added vehicle trips and sales receipts
+* Added simple reports
+
+0.1.0.4
+-------
+* Grouped UI into model based e.g. all item forms (list, add) is in Gui/Item folder
+* Initial invoices and other transactions
+
+0.1.0.3
+-------
+* Added controllers and services components
+* Separated data components to another project
+* Revised BaseModel to have to dependency on data access
+
+0.1.0
+-----
+* Updated SQL scripts
+* Updated mapping files
+* Updated application icon
+* Changed generator class for ID to identity
+* Changed mainform to Workbench
+* Added countries/states table for listing countries and states
+* Added SQLite database as default database to connect to
+* Updated reports to have its own project
+* Update namespaces
+
+0.0.3
+-----
+* Modified setup scripts
+* Added full setup scripts including Crystal Reports Runtime
+
+0.0.2
+-----
+* Updated project files
+* Changed help links from about form
+* Updated build file for 3.5 framework

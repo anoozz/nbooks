@@ -1,0 +1,5 @@
+* open nbooks with disabled menu and toolbars
+* when clicking open company, show open dialog
+* when file is selected, assigned new configuration to nhibernate helper
+* open first record of the company
+* show login form

@@ -1,0 +1,16 @@
+questions
+=========
+* saon ug kahibawo nga nabayran na ang delivery?
+* ask catherine how to handle delivery receipt for Quickbooks (sales receipt).
+* saon ug trace sa vehicle on 2 way trip, income included and expenses?
+
+relationships
+=============
+* company has information.
+* company has customers.
+* company has vendors.
+* comapny has items (for selling, mostly services).
+* company has vehicles.
+* vehicle has trips (2 way schedule).
+* company issues invoices to customers (tagged to trip).
+* company enter sales receipts when cash is received.

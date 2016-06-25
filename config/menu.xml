@@ -1,0 +1,27 @@
+<menu>
+	<menuitem text="File">
+		<menuitem text="Exit" command="NBooks.Commands.ExitCommand"/>
+	</menuitem>
+	<menuitem text="Edit">
+		<menuitem text="Exit" command="NBooks.Commands.ExitCommand"/>
+	</menuitem>
+	<menuitem text="Customers">
+		<menuitem text="Customer List"/>
+	</menuitem>
+	<menuitem text="Vendors">
+		<menuitem text="Vendor List"/>
+	</menuitem>
+	<menuitem text="Employees">
+		<menuitem text="Employee List"/>
+	</menuitem>
+	<menuitem text="Window">
+		<menuitem text="Arrange Icons"/>
+		<menuitem text="Close All"/>
+		<separator/>
+		<menuitem text="Tile Horizontally"/>
+		<menuitem text="Tile Vertically"/>
+	</menuitem>
+	<menuitem text="Help">
+		<menuitem text="About" command="NBooks.Commands.ShowAbout"/>
+	</menuitem>
+</menu>

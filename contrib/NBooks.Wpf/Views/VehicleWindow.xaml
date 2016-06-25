@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="NBooks.Wpf.Views.VehicleWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="NBooks.Wpf.Views"
+	Height="300"
+	Width="300">
+	<Grid>
+		<Label
+			Content="Enter the name or identification number of the vehicle for which you want to track mileage."
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,8,0,0" />
+		<Label
+			Content="Vehicle"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,32.2766666666667,0,0"
+			Width="44.38"
+			Height="23.276666666666667" />
+		<TextBox
+			Grid.Column="0"
+			Grid.Row="0"
+			VerticalAlignment="Top"
+			Height="20"
+			Width="120"
+			HorizontalAlignment="Right"
+			Margin="0,35.5533333333334,108.62,0"
+			Name="textBoxName"
+			Text="" />
+		<Label
+			Content="Description"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,56.55333333,0,0"
+			Height="23.27666667" />
+		<TextBox
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Stretch"
+			Margin="8,80.83,0,167.17"
+			Width="120"
+			Height="20"
+			Name="textBoxDescription" />
+		<CheckBox
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="8,109.83,0,0"
+			Width="120"
+			Height="20"
+			Content="Vehicle is inactive"
+			Name="checkBoxInactive" />
+		<Button
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			Width="75"
+			Height="23"
+			Content="Ok"
+			Name="buttonOk"
+			Click="buttonOk_Click"
+			Margin="0,87,23.5,158" />
+		<Button
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,111,23.5,0"
+			Width="75"
+			Height="23"
+			Content="Cancel"
+			Name="buttonCancel"
+			Click="buttonCancel_Click" />
+	</Grid>
+</Window>

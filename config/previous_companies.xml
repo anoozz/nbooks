@@ -1,0 +1,7 @@
+<companies>
+	<company type="mysql">server=localhost;user id=root;database=rykamon_marketing</company>
+	<company type="sqlite">C:\ian\projects\nbooks\branches\0.1.0\data\sqlite\Bogetz Global Solutions.sqlite</company>
+	<company type="sqlite">C:\ian\projects\nbooks\branches\0.1.0\data\sqlite\Rykamon Marketing.sqlite</company>
+	<company type="sqlite">C:\ian\projects\nbooks\branches\0.1.0\data\sqlite\E1 Prime Savers.sqlite</company>
+	<company type="sqlite">C:\ian\projects\nbooks\branches\0.1.0\data\sqlite\Municipality of Bantayan.sqlite</company>
+</companies>

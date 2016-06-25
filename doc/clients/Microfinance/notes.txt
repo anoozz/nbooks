@@ -1,0 +1,6 @@
+relationships
+=============
+* company has information.
+* company has customers.
+* company has items (mostly non-inventory).
+* company issues invoices (as bill) to customers.

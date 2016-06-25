@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Employee" table="employees">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<component name="LegalName" class="Name">
+			<property name="Title" column="title" />
+			<property name="Last" column="last_name" />
+			<property name="First" column="first_name" />
+			<property name="Middle" column="middle_name" />
+		</component>
+		<property name="Gender" column="gender" />
+		<property name="DateOfBirth" column="date_of_birth" />
+		<property name="MaritalStatus" column="marital_status" />
+		<component name="Address" class="Address">
+			<property name="Street1" column="street1" />
+			<property name="Street2" column="street2" />
+			<property name="City" column="city" />
+			<property name="Zip" column="zip" />
+		</component>
+		<many-to-one name="State" class="State" column="state_id" />
+		<property name="Phone" column="phone" />
+		<property name="Cellular" column="cellular" />
+		<property name="Email" column="email" />
+		<property name="Religion" column="religion" />
+		<property name="DateHired" column="date_hired" />
+		<property name="DateReleased" column="date_resigned" />
+		<property name="Contact" column="contact" />
+		<property name="AccountNo" column="account_no" />
+		<property name="HDMF" column="hdmf" />
+		<property name="SSSNo" column="ss_no" />
+		<property name="TIN" column="tin" />
+		<property name="IdNo" column="emp_id" />
+		<property name="PhilHealthNo" column="philhealth" />
+		<property name="ImageByte" column="image" />
+		<property name="Inactive" column="inactive" />
+		<many-to-one name="Position" class="Position" column="position_id" />
+		<many-to-one name="Department" class="Department" column="department_id" />
+	</class>
+</hibernate-mapping>

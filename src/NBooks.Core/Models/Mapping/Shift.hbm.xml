@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Shift" table="shifts">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Notes" column="notes" />
+		<property name="RegularHours" column="regular_hours" />
+		<property name="GracePeriod" column="grace_period" />
+		<property name="Inactive" column="inactive" />
+		<bag name="Times" inverse="true" cascade="all-delete-orphan">
+			<key column="shift_id" />
+			<one-to-many class="ShiftTime" />
+		</bag>
+	</class>
+	<class name="ShiftTime" table="shift_times">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Shift" class="Shift" column="shift_id" />
+		<property name="TimeIn" column="time_in" />
+		<property name="TimeOut" column="time_out" />
+	</class>
+</hibernate-mapping>

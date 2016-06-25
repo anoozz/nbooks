@@ -1,0 +1,4 @@
+mysql|server=localhost;user id=root;database=e1_prime_savers
+sqlite|D:\ian\projects\nbooks@codepplex\data\sqlite\Bogetz Global Solutions.sqlite
+sqlite|D:\ian\projects\nbooks@codepplex\data\sqlite\PG Forwarding Services.sqlite
+sqlite|D:\ian\projects\nbooks@codepplex\data\sqlite\Rykamon Marketing.sqlite

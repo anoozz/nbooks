@@ -1,0 +1,28 @@
+drop table if exists company;
+create table company(
+	id integer not null primary key,
+	name varchar(45),
+	ship_to_name varchar(45),
+	ship_to_address varchar(255),
+	address varchar(255),
+	phone varchar(45),
+	fax varchar(45),
+	email varchar(45),
+	website varchar(45),
+	legal_name varchar(45),
+	legal_address varchar(45),
+	legal_address1 varchar(45),
+	city varchar(45),
+	state_id integer,
+	zip varchar(45),
+	legal_country_id integer,
+	country_id integer,
+	fiscal_year smallint,
+	tax_year smallint,
+	income_tax_form smallint,
+	ein varchar(45),
+	ssn varchar(45),
+	payroll_contact varchar(45),
+	payroll_contact_title varchar(45),
+	payroll_contact_phone varchar(45)
+);

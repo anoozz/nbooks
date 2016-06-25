@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Invoice" table="invoices">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Account" class="Account" column="account_id" />
+		<many-to-one name="Customer" class="Customer" column="customer_id" />
+		<property name="RefNo" column="ref_no" />
+		<property name="BillToAddress" column="bill_to_address" />
+		<property name="ShipToAddress" column="ship_to_address" />
+		<property name="PONo" column="po_no" />
+		<property name="Memo" column="memo" />
+		<property name="Status" column="status" />
+		<many-to-one name="Terms" class="Terms" column="terms_id" />
+		<many-to-one name="CustomerMessage" class="CustomerMessage" column="customer_message_id" />
+		<bag name="Items" inverse="true" cascade="all-delete-orphan">
+			<key column="invoice_id" />
+			<one-to-many class="InvoiceItem" />
+		</bag>
+	</class>
+	<class name="InvoiceItem" table="invoices_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Invoice" class="Invoice" column="invoice_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="UnitPrice" column="unit_price" />
+		<property name="Quantity" column="quantity" />
+		<many-to-one name="SalesTaxCode" class="SalesTaxCode" column="sales_tax_code_id" />
+	</class>
+</hibernate-mapping>

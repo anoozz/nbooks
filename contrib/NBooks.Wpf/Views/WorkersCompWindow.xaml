@@ -1,0 +1,8 @@
+﻿<Window x:Class="NBooks.Wpf.Views.WorkersCompWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="NBooks.Wpf.Views" Height="300" Width="300">
+	<Grid>
+		
+	</Grid>
+</Window>

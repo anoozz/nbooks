@@ -1,0 +1,13 @@
+                                   INVOICE
+Date: %s
+Salesman: %s
+Route: %s
+Reference No: %s
+Customer: %s
+
+Code          Description            Unit    Qty     Price      Disc     Amount
+-------------------------------------------------------------------------------
+%s
+-------------------------------------------------------------------------------
+
+Prepared By: %s             Approved By: %s

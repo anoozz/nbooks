@@ -1,0 +1,2 @@
+insert into sales_tax_codes(code, description, taxable, inactive) values('Tax', 'Taxable sales', 1, 0);
+insert into sales_tax_codes(code, description, taxable, inactive) values('Non', 'Non-taxable sales', 0, 0);

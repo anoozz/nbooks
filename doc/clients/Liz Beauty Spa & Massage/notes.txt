@@ -1,0 +1,8 @@
+relationships
+=============
+* company has information.
+* company has employees.
+* company issues payslips to employees.
+* company has payroll codes.
+* company calculates payroll.
+* employees has information.

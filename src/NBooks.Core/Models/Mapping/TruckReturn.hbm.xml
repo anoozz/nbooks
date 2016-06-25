@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="TruckReturn" table="truck_returns">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="Route" class="Route" column="route_id" />
+		<many-to-one name="SalesRep" class="SalesRep" column="sales_rep_id" />
+		<many-to-one name="Customer" class="Customer" column="customer_id" />
+		<property name="TruckNo" column="truck_no" />
+		<property name="PreparedBy" column="prepared_by" />
+		<property name="ApprovedBy" column="approved_by" />
+		<property name="ReleasedBy" column="released_by" />
+		<property name="RecordedBy" column="recorded_by" />
+		<property name="Status" column="status" />
+		<property name="Remarks" column="remarks" />
+		<bag name="Items" inverse="true" cascade="all-delete-orphan">
+			<key column="truck_return_id" />
+			<one-to-many class="TruckReturnItem" />
+		</bag>
+	</class>
+	<class name="TruckReturnItem" table="truck_returns_items">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Return" class="TruckReturn" column="truck_return_id" />
+		<many-to-one name="Item" class="Item" column="item_id" />
+		<property name="UnitPrice" column="unit_price" />
+		<property name="Quantity" column="quantity" />
+		<property name="Discount" column="discount" />
+	</class>
+</hibernate-mapping>

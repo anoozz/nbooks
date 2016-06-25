@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="User" table="users">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="Password" column="password" />
+		<property name="ChallengeQuestion" column="challenge_question" />
+		<property name="Answer" column="answer" />
+		<bag name="Modules" inverse="true" cascade="all-delete-orphan">
+			<key column="user_id" />
+			<one-to-many class="UserModule" />
+		</bag>
+	</class>
+	<class name="UserModule" table="users_modules">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="User" class="User" column="user_id" />
+		<many-to-one name="Module" class="Module" column="module_id" />
+		<bag name="Commands" inverse="true" cascade="all-delete-orphan">
+			<key column="module_id" />
+			<one-to-many class="UserModuleCommand" />
+		</bag>
+	</class>
+	<class name="UserModuleCommand" table="users_modules_commands">
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Module" class="UserModule" column="module_id" />
+		<many-to-one name="Command" class="ModuleCommand" column="command_id" />
+	</class>
+</hibernate-mapping>

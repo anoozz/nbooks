@@ -1,0 +1,144 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FB590257-E928-4F6D-9C49-7935FD3668B4}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PatientArchiver</RootNamespace>
+    <AssemblyName>PatientArchiver</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs" />
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ClinicCommands.cs" />
+    <Compile Include="Command\EditCommands.cs" />
+    <Compile Include="Command\FileCommands.cs" />
+    <Compile Include="Command\HelpCommands.cs" />
+    <Compile Include="Command\PatientCommands.cs" />
+    <Compile Include="Command\ViewCommands.cs" />
+    <Compile Include="Command\VisitCommands.cs" />
+    <Compile Include="Command\WindowCommands.cs" />
+    <Compile Include="Gui\AboutForm.cs" />
+    <Compile Include="Gui\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ClinicForm.cs" />
+    <Compile Include="Gui\ClinicForm.Designer.cs">
+      <DependentUpon>ClinicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DefaultMenu.cs" />
+    <Compile Include="Gui\PatientForm.cs" />
+    <Compile Include="Gui\PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\PatientListForm.cs" />
+    <Compile Include="Gui\PatientListForm.Designer.cs">
+      <DependentUpon>PatientListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\UserForm.cs" />
+    <Compile Include="Gui\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\UserListForm.cs" />
+    <Compile Include="Gui\UserListForm.Designer.cs">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\VisitForm.cs" />
+    <Compile Include="Gui\VisitForm.Designer.cs">
+      <DependentUpon>VisitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Clinic.cs" />
+    <Compile Include="Model\Dao\IClinicDao.cs" />
+    <Compile Include="Model\Dao\IPatientDao.cs" />
+    <Compile Include="Model\Dao\IUserDao.cs" />
+    <Compile Include="Model\Dao\IVisitDao.cs" />
+    <Compile Include="Model\Dao\NHibernate\NHibernateClinicDao.cs" />
+    <Compile Include="Model\Dao\NHibernate\NHibernatePatientDao.cs" />
+    <Compile Include="Model\Dao\NHibernate\NHibernateUserDao.cs" />
+    <Compile Include="Model\Dao\NHibernate\NHibernateVisitDao.cs" />
+    <Compile Include="Model\Dao\SQLite\SQLitePatientDao.cs" />
+    <Compile Include="Model\Name.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Visit.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\PatientListForm.resx">
+      <DependentUpon>PatientListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\UserListForm.resx">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\VisitForm.resx">
+      <DependentUpon>VisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gui" />
+    <Folder Include="Model" />
+    <Folder Include="Model\Dao" />
+    <Folder Include="Model\Dao\NHibernate" />
+    <Folder Include="Model\Dao\SQLite" />
+    <Folder Include="Command" />
+    <ProjectReference Include="..\..\src\Core\Core.csproj">
+      <Project>{6E5AEA57-EB1C-435D-838E-15207F5F54DD}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

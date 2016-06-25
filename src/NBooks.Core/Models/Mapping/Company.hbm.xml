@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="Company" table="company">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="name" />
+		<property name="ShipToName" column="ship_to_name" />
+		<property name="ShipToAddress" column="ship_to_address" />
+		<property name="Address" column="address" />
+		<property name="Phone" column="phone" />
+		<property name="Fax" column="fax" />
+		<property name="Email" column="email" />
+		<property name="Website" column="website" />
+		<property name="LegalName" column="legal_name" />
+		<component name="LegalAddress" class="Address">
+			<property name="Street1" column="legal_address" />
+			<property name="Street2" column="legal_address1" />
+			<property name="City" column="city" />
+			<property name="Zip" column="zip" />
+		</component>
+		<many-to-one name="State" class="State" column="state_id" />
+		<many-to-one name="Country" class="Country" column="country_id" />
+		<many-to-one name="LegalCountry" class="Country" column="legal_country_id" />
+		<property name="FiscalYear" column="fiscal_year" />
+		<property name="TaxYear" column="tax_year" />
+		<property name="IncomeTaxForm" column="income_tax_form" />
+		<property name="EIN" column="ein" />
+		<property name="SSN" column="ssn" />
+		<property name="PayrollContact" column="payroll_contact" />
+		<property name="PayrollTitle" column="payroll_contact_title" />
+		<property name="PayrollPhone" column="payroll_contact_phone" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="BillPayment" table="bills_payments">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Date" column="date" />
+		<many-to-one name="PaymentMethod" class="PaymentMethod" column="payment_method_id" />
+		<many-to-one name="Account" class="Account" column="account_id" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="PayrollCode" table="payroll_codes">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Code" column="code" />
+		<property name="DateFrom" column="date_from" />
+		<property name="DateTo" column="date_to" />
+		<property name="Inactive" column="inactive" />
+	</class>
+</hibernate-mapping>

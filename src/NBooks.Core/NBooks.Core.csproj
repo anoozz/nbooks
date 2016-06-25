@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{E8F09F0D-DE0F-4B4C-9635-87E96225B7AD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NBooks.Core</RootNamespace>
+    <AssemblyName>NBooks.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>..\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.102.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AbstractController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Repositories\IAccountRepository.cs" />
+    <Compile Include="Repositories\IBillRepository.cs" />
+    <Compile Include="Repositories\IBillPaymentRepository.cs" />
+    <Compile Include="Repositories\IBranchRepository.cs" />
+    <Compile Include="Repositories\ICategoryRepository.cs" />
+    <Compile Include="Repositories\ICheckRepository.cs" />
+    <Compile Include="Repositories\IClassRepository.cs" />
+    <Compile Include="Repositories\ICompanyRepository.cs" />
+    <Compile Include="Repositories\IConvertedItemRepository.cs" />
+    <Compile Include="Repositories\ICountryRepository.cs" />
+    <Compile Include="Repositories\ICustomerRepository.cs" />
+    <Compile Include="Repositories\ICustomerMessageRepository.cs" />
+    <Compile Include="Repositories\ICustomerTypeRepository.cs" />
+    <Compile Include="Repositories\IDeductionRepository.cs" />
+    <Compile Include="Repositories\IDeductionTypeRepository.cs" />
+    <Compile Include="Repositories\IDepartmentRepository.cs" />
+    <Compile Include="Repositories\IEmployeeRepository.cs" />
+    <Compile Include="Repositories\IEmployeeTypeRepository.cs" />
+    <Compile Include="Repositories\IEndingQuantityRepository.cs" />
+    <Compile Include="Repositories\IEstimateRepository.cs" />
+    <Compile Include="Repositories\IInvoiceRepository.cs" />
+    <Compile Include="Repositories\IItemRepository.cs" />
+    <Compile Include="Repositories\IItemReceiptRepository.cs" />
+    <Compile Include="Repositories\IJobTypeRepository.cs" />
+    <Compile Include="Repositories\ILoanRepository.cs" />
+    <Compile Include="Repositories\ILoanTypeRepository.cs" />
+    <Compile Include="Repositories\IModuleRepository.cs" />
+    <Compile Include="Repositories\IOrganizationRepository.cs" />
+    <Compile Include="Repositories\IOtherNameRepository.cs" />
+    <Compile Include="Repositories\IPagIbigPremiumRepository.cs" />
+    <Compile Include="Repositories\IPaymentRepository.cs" />
+    <Compile Include="Repositories\IPaymentMethodRepository.cs" />
+    <Compile Include="Repositories\IPayrollCodeRepository.cs" />
+    <Compile Include="Repositories\IPayrollItemRepository.cs" />
+    <Compile Include="Repositories\IPeriodRepository.cs" />
+    <Compile Include="Repositories\IPhilHealthPremiumRepository.cs" />
+    <Compile Include="Repositories\IPhysicalCountRepository.cs" />
+    <Compile Include="Repositories\IPositionRepository.cs" />
+    <Compile Include="Repositories\IPriceLevelRepository.cs" />
+    <Compile Include="Repositories\IPurchaseOrderRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\IRouteRepository.cs" />
+    <Compile Include="Repositories\ISalesInfoRepository.cs" />
+    <Compile Include="Repositories\ISalesOrderRepository.cs" />
+    <Compile Include="Repositories\ISalesReceiptRepository.cs" />
+    <Compile Include="Repositories\ISalesRepRepository.cs" />
+    <Compile Include="Repositories\ISalesTaxCodeRepository.cs" />
+    <Compile Include="Repositories\IShiftRepository.cs" />
+    <Compile Include="Repositories\IShippingMethodRepository.cs" />
+    <Compile Include="Repositories\ISSPremiumRepository.cs" />
+    <Compile Include="Repositories\ISubCategoryRepository.cs" />
+    <Compile Include="Repositories\ITaxCodeRepository.cs" />
+    <Compile Include="Repositories\ITermsRepository.cs" />
+    <Compile Include="Repositories\ITimesheetRepository.cs" />
+    <Compile Include="Repositories\IToDoRepository.cs" />
+    <Compile Include="Repositories\ITruckLoadRepository.cs" />
+    <Compile Include="Repositories\ITruckReturnRepository.cs" />
+    <Compile Include="Repositories\IUnitRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IVehicleRepository.cs" />
+    <Compile Include="Repositories\IVehicleTripRepository.cs" />
+    <Compile Include="Repositories\IVendorRepository.cs" />
+    <Compile Include="Repositories\IVendorTypeRepository.cs" />
+    <Compile Include="Repositories\IWorkersCompRepository.cs" />
+    <Compile Include="Repositories\IWorkOrderRepository.cs" />
+    <Compile Include="Helpers\CountryHelper.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Alert.cs" />
+    <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Bill.cs" />
+    <Compile Include="Models\BillPayment.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Command\IModelCommand.cs" />
+    <Compile Include="Models\Command\InvoiceCommands.cs" />
+    <Compile Include="Models\Command\TruckLoadCommands.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\ConvertedItem.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerMessage.cs" />
+    <Compile Include="Models\CustomerType.cs" />
+    <Compile Include="Models\Deduction.cs" />
+    <Compile Include="Models\DeductionType.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeType.cs" />
+    <Compile Include="Models\EndingQuantity.cs" />
+    <Compile Include="Models\Estimate.cs" />
+    <Compile Include="Models\FiscalYear.cs" />
+    <Compile Include="Models\Formatter\IFormatter.cs" />
+    <Compile Include="Models\Formatter\IInvoiceFormatter.cs" />
+    <Compile Include="Models\Formatter\ITruckLoadFormatter.cs" />
+    <Compile Include="Models\Formatter\ITruckReturnFormatter.cs" />
+    <Compile Include="Models\INotes.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemReceipt.cs" />
+    <Compile Include="Models\JobType.cs" />
+    <Compile Include="Models\Journal.cs" />
+    <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\LoanType.cs" />
+    <Compile Include="Models\Module.cs" />
+    <Compile Include="Models\Name.cs" />
+    <Compile Include="Models\OtherName.cs" />
+    <Compile Include="Models\PagIbigPremium.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
+    <Compile Include="Models\PayrollCode.cs" />
+    <Compile Include="Models\PayrollItem.cs" />
+    <Compile Include="Models\PayrollSchedule.cs" />
+    <Compile Include="Models\Period.cs" />
+    <Compile Include="Models\PhilHealthPremium.cs" />
+    <Compile Include="Models\PhysicalCount.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\PriceLevel.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\PurchaseOrder.cs" />
+    <Compile Include="Models\Reminder.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\SalesInfo.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\SalesReceipt.cs" />
+    <Compile Include="Models\SalesRep.cs" />
+    <Compile Include="Models\SalesOrder.cs" />
+    <Compile Include="Models\SalesTaxCode.cs" />
+    <Compile Include="Models\Shift.cs" />
+    <Compile Include="Models\ShippingMethod.cs" />
+    <Compile Include="Models\SSPremium.cs" />
+    <Compile Include="Models\Stakeholder.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\TaxCode.cs" />
+    <Compile Include="Models\Terms.cs" />
+    <Compile Include="Models\Timesheet.cs" />
+    <Compile Include="Models\ToDo.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TruckLoad.cs" />
+    <Compile Include="Models\TruckReturn.cs" />
+    <Compile Include="Models\Unit.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleTrip.cs" />
+    <Compile Include="Models\Vendor.cs" />
+    <Compile Include="Models\VendorType.cs" />
+    <Compile Include="Models\Voucher.cs" />
+    <Compile Include="Models\WorkersComp.cs" />
+    <Compile Include="Models\WorkOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BillService.cs" />
+    <Compile Include="Util\ApplicationUtility.cs" />
+    <Compile Include="Util\BaseCommand.cs" />
+    <Compile Include="Util\ConvertUtility.cs" />
+    <Compile Include="Util\Databases\Database.cs" />
+    <Compile Include="Util\Databases\MySqlDatabase.cs" />
+    <Compile Include="Util\Databases\SQLiteDatabase.cs" />
+    <Compile Include="Util\DateUtility.cs" />
+    <Compile Include="Util\ImageUtility.cs" />
+    <Compile Include="Util\IPrinter.cs" />
+    <Compile Include="Util\ItemUtility.cs" />
+    <Compile Include="Util\MySqlUtility.cs" />
+    <Compile Include="Util\DefaultPrinter.cs" />
+    <Compile Include="Util\ProcessUtility.cs" />
+    <Compile Include="Util\ResourceUtility.cs" />
+    <Compile Include="Util\SQLiteUtility.cs" />
+    <Compile Include="Util\StringEventHandler.cs" />
+    <Compile Include="Util\SwfUtility.cs" />
+    <Compile Include="Views\IBillView.cs" />
+    <Compile Include="Views\ICustomerView.cs" />
+    <Compile Include="Views\IItemView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <EmbeddedResource Include="Models\Mapping\Company.hbm.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Mapping\ConvertedItem.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Customer.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\EndingQuantity.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Invoice.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Item.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\ItemReceipt.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Module.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PhysicalCount.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PurchaseOrder.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Route.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SalesInfo.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SalesRep.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SalesOrder.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\ToDo.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\TruckLoad.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\TruckReturn.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Unit.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\User.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Vendor.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Country.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Department.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Employee.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Position.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SubCategory.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Account.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Class.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Bill.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\BillPayment.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Category.hbm.xml" />
+    <None Include="app.config" />
+    <None Include="Models\Mapping\Configuration.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\VehicleTrip.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Period.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Deduction.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\ShippingMethod.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Vehicle.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\CustomerMessage.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\CustomerType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\JobType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\VendorType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\DeductionType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PayrollSchedule.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Shift.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Timesheet.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\TaxCode.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PayrollCode.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PagIbigPremium.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PhilHealthPremium.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SSPremium.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\LoanType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\EmployeeType.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\WorkersComp.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PriceLevel.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\PaymentMethod.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SalesTaxCode.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\OtherName.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\SalesReceipt.hbm.xml" />
+    <EmbeddedResource Include="Models\Mapping\Terms.hbm.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers" />
+    <Folder Include="Services" />
+    <Folder Include="Views" />
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6E5AEA57-EB1C-435D-838E-15207F5F54DD}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <Folder Include="Helpers" />
+  </ItemGroup>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets')" />
+</Project>

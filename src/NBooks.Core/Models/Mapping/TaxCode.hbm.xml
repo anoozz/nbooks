@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="NBooks.Core.Models" assembly="NBooks.Core">
+	<class name="TaxCode" table="tax_codes">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="Code" column="code" />
+		<property name="Description" column="description" />
+		<property name="Inactive" column="inactive" />
+		<property name="PersonalExemption" column="personal_exemption" />
+		<bag name="Ranges" inverse="true" cascade="all-delete-orphan">
+			<key column="tax_code_id" />
+			<one-to-many class="TaxSalaryRange" />
+		</bag>
+	</class>
+	<class name="TaxSalaryRange" table="tax_salary_ranges">
+		<id name="Id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="TaxCode" class="TaxCode" column="tax_code_id" />
+		<property name="MonthlyFrom" column="monthly_from" />
+		<property name="MonthlyTo" column="monthly_to" />
+		<property name="MonthlyTax" column="monthly_tax" />
+	</class>
+</hibernate-mapping>

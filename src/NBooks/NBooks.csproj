@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{507169BD-FB2D-4F7C-91F2-F2D013939DDD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NBooks</RootNamespace>
+    <AssemblyName>nbooks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Windward - Ian\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <!--<ManifestCertificateThumbprint>EC4697B291096C5B153A5D852E41E3D1C4B7AA19</ManifestCertificateThumbprint>
+    <ManifestKeyFile>NBooks_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>-->
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://nbooks.codeplex.com/releases/clickonce/</InstallUrl>
+    <ProductName>NBooks Accounting</ProductName>
+    <PublisherName>NBooks</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>0.1.0.7</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\bin</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.102.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AccountCommands.cs" />
+    <Compile Include="Commands\BillCommands.cs" />
+    <Compile Include="Commands\BillPaymentCommands.cs" />
+    <Compile Include="Commands\CategoryCommands.cs" />
+    <Compile Include="Commands\CheckCommands.cs" />
+    <Compile Include="Commands\ClassCommands.cs" />
+    <Compile Include="Commands\CompanyCommands.cs" />
+    <Compile Include="Commands\ConvertedItemCommands.cs" />
+    <Compile Include="Commands\CustomerCommands.cs" />
+    <Compile Include="Commands\CustomerMessageCommands.cs" />
+    <Compile Include="Commands\CustomerTypeCommands.cs" />
+    <Compile Include="Commands\DeductionTypeCommands.cs" />
+    <Compile Include="Commands\DepartmentCommands.cs" />
+    <Compile Include="Commands\EditCommands.cs" />
+    <Compile Include="Commands\EmployeeCommands.cs" />
+    <Compile Include="Commands\EmployeeTypeCommands.cs" />
+    <Compile Include="Commands\FileCommands.cs" />
+    <Compile Include="Commands\HelpCommands.cs" />
+    <Compile Include="Commands\InvoiceCommands.cs" />
+    <Compile Include="Commands\ItemCommands.cs" />
+    <Compile Include="Commands\ItemReceiptCommands.cs" />
+    <Compile Include="Commands\JobTypeCommands.cs" />
+    <Compile Include="Commands\LoanTypeCommands.cs" />
+    <Compile Include="Commands\ModuleCommands.cs" />
+    <Compile Include="Commands\OtherNameCommands.cs" />
+    <Compile Include="Commands\PagIbigPremiumCommands.cs" />
+    <Compile Include="Commands\PaymentCommands.cs" />
+    <Compile Include="Commands\PaymentMethodCommands.cs" />
+    <Compile Include="Commands\PayrollCodeCommands.cs" />
+    <Compile Include="Commands\PeriodCommands.cs" />
+    <Compile Include="Commands\PhilHealthPremiumCommands.cs" />
+    <Compile Include="Commands\PhysicalCountCommands.cs" />
+    <Compile Include="Commands\PositionCommands.cs" />
+    <Compile Include="Commands\PriceLevelCommands.cs" />
+    <Compile Include="Commands\PurchaseOrderCommands.cs" />
+    <Compile Include="Commands\ReportCommands.cs" />
+    <Compile Include="Commands\RouteCommands.cs" />
+    <Compile Include="Commands\SalesInfoCommands.cs" />
+    <Compile Include="Commands\SalesRepCommands.cs" />
+    <Compile Include="Commands\SalesReceiptCommands.cs" />
+    <Compile Include="Commands\SalesTaxCodeCommands.cs" />
+    <Compile Include="Commands\ShiftCommands.cs" />
+    <Compile Include="Commands\ShippingMethodCommands.cs" />
+    <Compile Include="Commands\SSPremiumCommands.cs" />
+    <Compile Include="Commands\SubCategoryCommands.cs" />
+    <Compile Include="Commands\TaxCodeCommands.cs" />
+    <Compile Include="Commands\TermsCommands.cs" />
+    <Compile Include="Commands\TimesheetCommands.cs" />
+    <Compile Include="Commands\ToDoCommands.cs" />
+    <Compile Include="Commands\TruckLoadCommands.cs" />
+    <Compile Include="Commands\TruckReturnCommands.cs" />
+    <Compile Include="Commands\UnitCommands.cs" />
+    <Compile Include="Commands\UserCommands.cs" />
+    <Compile Include="Commands\VehicleCommands.cs" />
+    <Compile Include="Commands\VehicleTripCommands.cs" />
+    <Compile Include="Commands\VendorCommands.cs" />
+    <Compile Include="Commands\VendorTypeCommands.cs" />
+    <Compile Include="Commands\ViewCommands.cs" />
+    <Compile Include="Commands\WindowCommands.cs" />
+    <Compile Include="Commands\WorkersCompCommands.cs" />
+    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="Views\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccountListForm.Designer.cs">
+      <DependentUpon>AccountListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\AccountTypes.cs" />
+    <Compile Include="Views\AmountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AmountForm.Designer.cs">
+      <DependentUpon>AmountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BillPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillPaymentForm.Designer.cs">
+      <DependentUpon>BillPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BillAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillAccountForm.Designer.cs">
+      <DependentUpon>BillAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BillItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillItemForm.Designer.cs">
+      <DependentUpon>BillItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BillListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillListForm.Designer.cs">
+      <DependentUpon>BillListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryListForm.Designer.cs">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CheckForm.Designer.cs">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClassForm.Designer.cs">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClassListForm.Designer.cs">
+      <DependentUpon>ClassListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CompanyForm.Designer.cs">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyListPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CompanyListPane.Designer.cs">
+      <DependentUpon>CompanyListPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceListPane.cs" />
+    <Compile Include="Views\InvoiceListPane.Designer.cs">
+      <DependentUpon>InvoiceListPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShipToInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShipToInformationForm.Designer.cs">
+      <DependentUpon>ShipToInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConvertItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConvertItemForm.Designer.cs">
+      <DependentUpon>ConvertItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerMessageForm.Designer.cs">
+      <DependentUpon>CustomerMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerMessageListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerMessageListForm.Designer.cs">
+      <DependentUpon>CustomerMessageListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerTypeForm.Designer.cs">
+      <DependentUpon>CustomerTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerTypeListForm.Designer.cs">
+      <DependentUpon>CustomerTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerCenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerCenterForm.Designer.cs">
+      <DependentUpon>CustomerCenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerDiscountedItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerDiscountedItemForm.Designer.cs">
+      <DependentUpon>CustomerDiscountedItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerListForm.Designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerListOfValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerListOfValueForm.Designer.cs">
+      <DependentUpon>CustomerListOfValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeductionTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeductionTypeForm.Designer.cs">
+      <DependentUpon>DeductionTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeductionTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeductionTypeListForm.Designer.cs">
+      <DependentUpon>DeductionTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DepartmentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DepartmentListForm.Designer.cs">
+      <DependentUpon>DepartmentListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeForm.Designer.cs">
+      <DependentUpon>EmployeeTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeTypeListForm.Designer.cs">
+      <DependentUpon>EmployeeTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeCenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeCenterForm.Designer.cs">
+      <DependentUpon>EmployeeCenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeListForm.Designer.cs">
+      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeListPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeListPane.Designer.cs">
+      <DependentUpon>EmployeeListPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EstimateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EstimateForm.Designer.cs">
+      <DependentUpon>EstimateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindCustomerInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FindCustomerInvoiceForm.Designer.cs">
+      <DependentUpon>FindCustomerInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceForm.Designer.cs">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceItemForm.Designer.cs">
+      <DependentUpon>InvoiceItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceListForm.Designer.cs">
+      <DependentUpon>InvoiceListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptForm.Designer.cs">
+      <DependentUpon>ItemReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemReceiptForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptForm2.Designer.cs">
+      <DependentUpon>ItemReceiptForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemReceiptItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptItemForm.Designer.cs">
+      <DependentUpon>ItemReceiptItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemReceiptListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptListForm.Designer.cs">
+      <DependentUpon>ItemReceiptListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemReceiptNoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemReceiptNoForm.Designer.cs">
+      <DependentUpon>ItemReceiptNoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleTripListForm.cs" />
+    <Compile Include="Views\VehicleTripListForm.Designer.cs">
+      <DependentUpon>VehicleTripListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorReturnedItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorReturnedItemForm.Designer.cs">
+      <DependentUpon>VendorReturnedItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryPartItemPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InventoryPartItemPane.Designer.cs">
+      <DependentUpon>InventoryPartItemPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemForm2.Designer.cs">
+      <DependentUpon>ItemForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemListForm.Designer.cs">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemListOfValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemListOfValueForm.Designer.cs">
+      <DependentUpon>ItemListOfValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\ItemTypes.cs" />
+    <Compile Include="Views\Item\NonInventoryPartItemPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Item\NonInventoryPartItemPane.Designer.cs">
+      <DependentUpon>NonInventoryPartItemPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\ServiceItemPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Item\ServiceItemPane.Designer.cs">
+      <DependentUpon>ServiceItemPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobTypeForm.Designer.cs">
+      <DependentUpon>JobTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobTypeListForm.Designer.cs">
+      <DependentUpon>JobTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListOfValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListOfValueForm.Designer.cs">
+      <DependentUpon>ListOfValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoanTypeForm.Designer.cs">
+      <DependentUpon>LoanTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoanTypeListForm.Designer.cs">
+      <DependentUpon>LoanTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModuleCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModuleCommandForm.Designer.cs">
+      <DependentUpon>ModuleCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModuleForm.Designer.cs">
+      <DependentUpon>ModuleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModuleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ModuleListForm.Designer.cs">
+      <DependentUpon>ModuleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotepadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NotepadForm.Designer.cs">
+      <DependentUpon>NotepadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OpenWindowListPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OpenWindowListPane.Designer.cs">
+      <DependentUpon>OpenWindowListPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OtherNameForm.Designer.cs">
+      <DependentUpon>OtherNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherNameListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OtherNameListForm.Designer.cs">
+      <DependentUpon>OtherNameListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PagIbigPremiumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PagIbigPremiumForm.Designer.cs">
+      <DependentUpon>PagIbigPremiumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PagIbigPremiumListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PagIbigPremiumListForm.Designer.cs">
+      <DependentUpon>PagIbigPremiumListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentMethodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentMethodForm.Designer.cs">
+      <DependentUpon>PaymentMethodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentMethodListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentMethodListForm.Designer.cs">
+      <DependentUpon>PaymentMethodListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentInvoiceForm.Designer.cs">
+      <DependentUpon>PaymentInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollCodeForm.Designer.cs">
+      <DependentUpon>PayrollCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollCodeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollCodeListForm.Designer.cs">
+      <DependentUpon>PayrollCodeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollItemForm.Designer.cs">
+      <DependentUpon>PayrollItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollItemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollItemListForm.Designer.cs">
+      <DependentUpon>PayrollItemListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollScheduleForm.Designer.cs">
+      <DependentUpon>PayrollScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PayrollScheduleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayrollScheduleListForm.Designer.cs">
+      <DependentUpon>PayrollScheduleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeriodCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PeriodCategoryForm.Designer.cs">
+      <DependentUpon>PeriodCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PeriodForm.Designer.cs">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeriodListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PeriodListForm.Designer.cs">
+      <DependentUpon>PeriodListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhilHealthPremiumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhilHealthPremiumForm.Designer.cs">
+      <DependentUpon>PhilHealthPremiumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhilHealthPremiumListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhilHealthPremiumListForm.Designer.cs">
+      <DependentUpon>PhilHealthPremiumListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhysicalCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhysicalCountForm.Designer.cs">
+      <DependentUpon>PhysicalCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhysicalCountItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhysicalCountItemForm.Designer.cs">
+      <DependentUpon>PhysicalCountItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhysicalCountListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhysicalCountListForm.Designer.cs">
+      <DependentUpon>PhysicalCountListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PositionForm.Designer.cs">
+      <DependentUpon>PositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PositionListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PositionListForm.Designer.cs">
+      <DependentUpon>PositionListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PriceLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PriceLevelForm.Designer.cs">
+      <DependentUpon>PriceLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PriceLevelListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PriceLevelListForm.Designer.cs">
+      <DependentUpon>PriceLevelListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderForm.Designer.cs">
+      <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderItemForm.Designer.cs">
+      <DependentUpon>PurchaseOrderItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderListForm.Designer.cs">
+      <DependentUpon>PurchaseOrderListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RouteForm.Designer.cs">
+      <DependentUpon>RouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RouteListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RouteListForm.Designer.cs">
+      <DependentUpon>RouteListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesInfoDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesInfoDetailForm.Designer.cs">
+      <DependentUpon>SalesInfoDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesInfoForm.Designer.cs">
+      <DependentUpon>SalesInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesInfoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesInfoListForm.Designer.cs">
+      <DependentUpon>SalesInfoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesOrderForm.Designer.cs">
+      <DependentUpon>SalesOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesReceiptForm.Designer.cs">
+      <DependentUpon>SalesReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesReceiptItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesReceiptItemForm.Designer.cs">
+      <DependentUpon>SalesReceiptItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesRepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesRepForm.Designer.cs">
+      <DependentUpon>SalesRepForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesRepListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesRepListForm.Designer.cs">
+      <DependentUpon>SalesRepListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageSalesTaxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageSalesTaxForm.Designer.cs">
+      <DependentUpon>ManageSalesTaxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeForm.Designer.cs">
+      <DependentUpon>SalesTaxCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesTaxCodeListForm.Designer.cs">
+      <DependentUpon>SalesTaxCodeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShiftForm.Designer.cs">
+      <DependentUpon>ShiftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShiftListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShiftListForm.Designer.cs">
+      <DependentUpon>ShiftListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShippingMethodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShippingMethodForm.Designer.cs">
+      <DependentUpon>ShippingMethodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShippingMethodListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShippingMethodListForm.Designer.cs">
+      <DependentUpon>ShippingMethodListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SSPremiumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SSPremiumForm.Designer.cs">
+      <DependentUpon>SSPremiumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SSPremiumListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SSPremiumListForm.Designer.cs">
+      <DependentUpon>SSPremiumListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NameCustomerFieldsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NameCustomerFieldsForm.Designer.cs">
+      <DependentUpon>NameCustomerFieldsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubCategoryForm.Designer.cs">
+      <DependentUpon>SubCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubCategoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubCategoryListForm.Designer.cs">
+      <DependentUpon>SubCategoryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaxCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaxCodeForm.Designer.cs">
+      <DependentUpon>TaxCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaxCodeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaxCodeListForm.Designer.cs">
+      <DependentUpon>TaxCodeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TermsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TermsForm.Designer.cs">
+      <DependentUpon>TermsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TermsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TermsListForm.Designer.cs">
+      <DependentUpon>TermsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AlertForm.Designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RemindersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RemindersForm.Designer.cs">
+      <DependentUpon>RemindersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToDoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ToDoForm.Designer.cs">
+      <DependentUpon>ToDoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToDoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ToDoListForm.Designer.cs">
+      <DependentUpon>ToDoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckLoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckLoadForm.Designer.cs">
+      <DependentUpon>TruckLoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckLoadItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckLoadItemForm.Designer.cs">
+      <DependentUpon>TruckLoadItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckLoadListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckLoadListForm.Designer.cs">
+      <DependentUpon>TruckLoadListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckLoadReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckLoadReferenceForm.Designer.cs">
+      <DependentUpon>TruckLoadReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckReturnForm.Designer.cs">
+      <DependentUpon>TruckReturnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckReturnForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckReturnForm2.Designer.cs">
+      <DependentUpon>TruckReturnForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckReturnItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckReturnItemForm.Designer.cs">
+      <DependentUpon>TruckReturnItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TruckReturnListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TruckReturnListForm.Designer.cs">
+      <DependentUpon>TruckReturnListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UnitForm.Designer.cs">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UnitListForm.Designer.cs">
+      <DependentUpon>UnitListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitParameterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UnitParameterForm.Designer.cs">
+      <DependentUpon>UnitParameterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminPasswordForm.Designer.cs">
+      <DependentUpon>AdminPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RequestPasswordForm.Designer.cs">
+      <DependentUpon>RequestPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserListForm.Designer.cs">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleTripForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleTripForm.Designer.cs">
+      <DependentUpon>VehicleTripForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleForm.Designer.cs">
+      <DependentUpon>VehicleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleListForm.Designer.cs">
+      <DependentUpon>VehicleListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorTypeForm.Designer.cs">
+      <DependentUpon>VendorTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorTypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorTypeListForm.Designer.cs">
+      <DependentUpon>VendorTypeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorCenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorCenterForm.Designer.cs">
+      <DependentUpon>VendorCenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorDiscountedItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorDiscountedItemForm.Designer.cs">
+      <DependentUpon>VendorDiscountedItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorForm.Designer.cs">
+      <DependentUpon>VendorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorListForm.Designer.cs">
+      <DependentUpon>VendorListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorListOfValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorListOfValueForm.Designer.cs">
+      <DependentUpon>VendorListOfValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkersCompForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WorkersCompForm.Designer.cs">
+      <DependentUpon>WorkersCompForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkersCompListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WorkersCompListForm.Designer.cs">
+      <DependentUpon>WorkersCompListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\DefaultMenu.cs" />
+    <Compile Include="Util\ItemSuggestionUtility.cs" />
+    <EmbeddedResource Include="ApplicationResource.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseUserControl.resx">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AccountListForm.resx">
+      <DependentUpon>AccountListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AmountForm.resx">
+      <DependentUpon>AmountForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillPaymentForm.resx">
+      <DependentUpon>BillPaymentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillAccountForm.resx">
+      <DependentUpon>BillAccountForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillItemForm.resx">
+      <DependentUpon>BillItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillListForm.resx">
+      <DependentUpon>BillListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CategoryListForm.resx">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CheckForm.resx">
+      <DependentUpon>CheckForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClassForm.resx">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClassListForm.resx">
+      <DependentUpon>ClassListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CompanyForm.resx">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CompanyListPane.resx">
+      <DependentUpon>CompanyListPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerCenterForm.resx">
+      <DependentUpon>CustomerCenterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceListPane.resx">
+      <DependentUpon>InvoiceListPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShipToInformationForm.resx">
+      <DependentUpon>ShipToInformationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConvertItemForm.resx">
+      <DependentUpon>ConvertItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerMessageForm.resx">
+      <DependentUpon>CustomerMessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerMessageListForm.resx">
+      <DependentUpon>CustomerMessageListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerTypeForm.resx">
+      <DependentUpon>CustomerTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerTypeListForm.resx">
+      <DependentUpon>CustomerTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerDiscountedItemForm.resx">
+      <DependentUpon>CustomerDiscountedItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerListOfValueForm.resx">
+      <DependentUpon>CustomerListOfValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeductionTypeForm.resx">
+      <DependentUpon>DeductionTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeductionTypeListForm.resx">
+      <DependentUpon>DeductionTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DepartmentListForm.resx">
+      <DependentUpon>DepartmentListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeTypeForm.resx">
+      <DependentUpon>EmployeeTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeTypeListForm.resx">
+      <DependentUpon>EmployeeTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeCenterForm.resx">
+      <DependentUpon>EmployeeCenterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeListForm.resx">
+      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeListPane.resx">
+      <DependentUpon>EmployeeListPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EstimateForm.resx">
+      <DependentUpon>EstimateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FindCustomerInvoiceForm.resx">
+      <DependentUpon>FindCustomerInvoiceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceForm.resx">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceItemForm.resx">
+      <DependentUpon>InvoiceItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceListForm.resx">
+      <DependentUpon>InvoiceListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemReceiptForm.resx">
+      <DependentUpon>ItemReceiptForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemReceiptForm2.resx">
+      <DependentUpon>ItemReceiptForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemReceiptItemForm.resx">
+      <DependentUpon>ItemReceiptItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemReceiptListForm.resx">
+      <DependentUpon>ItemReceiptListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemReceiptNoForm.resx">
+      <DependentUpon>ItemReceiptNoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleTripListForm.resx">
+      <DependentUpon>VehicleTripListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorReturnedItemForm.resx">
+      <DependentUpon>VendorReturnedItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InventoryPartItemPane.resx">
+      <DependentUpon>InventoryPartItemPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemForm2.resx">
+      <DependentUpon>ItemForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemListForm.resx">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemListOfValueForm.resx">
+      <DependentUpon>ItemListOfValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\NonInventoryPartItemPane.resx">
+      <DependentUpon>NonInventoryPartItemPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\ServiceItemPane.resx">
+      <DependentUpon>ServiceItemPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobTypeForm.resx">
+      <DependentUpon>JobTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobTypeListForm.resx">
+      <DependentUpon>JobTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListOfValueForm.resx">
+      <DependentUpon>ListOfValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoanTypeForm.resx">
+      <DependentUpon>LoanTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoanTypeListForm.resx">
+      <DependentUpon>LoanTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModuleCommandForm.resx">
+      <DependentUpon>ModuleCommandForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModuleForm.resx">
+      <DependentUpon>ModuleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModuleListForm.resx">
+      <DependentUpon>ModuleListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NotepadForm.resx">
+      <DependentUpon>NotepadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OpenWindowListPane.resx">
+      <DependentUpon>OpenWindowListPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherNameForm.resx">
+      <DependentUpon>OtherNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherNameListForm.resx">
+      <DependentUpon>OtherNameListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PagIbigPremiumForm.resx">
+      <DependentUpon>PagIbigPremiumForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PagIbigPremiumListForm.resx">
+      <DependentUpon>PagIbigPremiumListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentMethodForm.resx">
+      <DependentUpon>PaymentMethodForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentMethodListForm.resx">
+      <DependentUpon>PaymentMethodListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentInvoiceForm.resx">
+      <DependentUpon>PaymentInvoiceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PayrollCodeForm.resx">
+      <DependentUpon>PayrollCodeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PayrollCodeListForm.resx">
+      <DependentUpon>PayrollCodeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PayrollItemForm.resx">
+      <DependentUpon>PayrollItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PayrollScheduleForm.resx">
+      <DependentUpon>PayrollScheduleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PeriodCategoryForm.resx">
+      <DependentUpon>PeriodCategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PeriodForm.resx">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PeriodListForm.resx">
+      <DependentUpon>PeriodListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhilHealthPremiumForm.resx">
+      <DependentUpon>PhilHealthPremiumForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhilHealthPremiumListForm.resx">
+      <DependentUpon>PhilHealthPremiumListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhysicalCountForm.resx">
+      <DependentUpon>PhysicalCountForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhysicalCountItemForm.resx">
+      <DependentUpon>PhysicalCountItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhysicalCountListForm.resx">
+      <DependentUpon>PhysicalCountListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PositionForm.resx">
+      <DependentUpon>PositionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PositionListForm.resx">
+      <DependentUpon>PositionListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PriceLevelForm.resx">
+      <DependentUpon>PriceLevelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PriceLevelListForm.resx">
+      <DependentUpon>PriceLevelListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PurchaseOrderForm.resx">
+      <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PurchaseOrderItemForm.resx">
+      <DependentUpon>PurchaseOrderItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PurchaseOrderListForm.resx">
+      <DependentUpon>PurchaseOrderListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RouteForm.resx">
+      <DependentUpon>RouteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RouteListForm.resx">
+      <DependentUpon>RouteListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesInfoDetailForm.resx">
+      <DependentUpon>SalesInfoDetailForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesInfoForm.resx">
+      <DependentUpon>SalesInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesInfoListForm.resx">
+      <DependentUpon>SalesInfoListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesOrderForm.resx">
+      <DependentUpon>SalesOrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesReceiptForm.resx">
+      <DependentUpon>SalesReceiptForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesReceiptItemForm.resx">
+      <DependentUpon>SalesReceiptItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesRepForm.resx">
+      <DependentUpon>SalesRepForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesRepListForm.resx">
+      <DependentUpon>SalesRepListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesTaxCodeForm.resx">
+      <DependentUpon>SalesTaxCodeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesTaxCodeListForm.resx">
+      <DependentUpon>SalesTaxCodeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShiftForm.resx">
+      <DependentUpon>ShiftForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShiftListForm.resx">
+      <DependentUpon>ShiftListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShippingMethodForm.resx">
+      <DependentUpon>ShippingMethodForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShippingMethodListForm.resx">
+      <DependentUpon>ShippingMethodListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SSPremiumForm.resx">
+      <DependentUpon>SSPremiumForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SSPremiumListForm.resx">
+      <DependentUpon>SSPremiumListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NameCustomerFieldsForm.resx">
+      <DependentUpon>NameCustomerFieldsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubCategoryForm.resx">
+      <DependentUpon>SubCategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubCategoryListForm.resx">
+      <DependentUpon>SubCategoryListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaxCodeForm.resx">
+      <DependentUpon>TaxCodeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaxCodeListForm.resx">
+      <DependentUpon>TaxCodeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TermsForm.resx">
+      <DependentUpon>TermsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TermsListForm.resx">
+      <DependentUpon>TermsListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ToDoForm.resx">
+      <DependentUpon>ToDoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ToDoListForm.resx">
+      <DependentUpon>ToDoListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckLoadForm.resx">
+      <DependentUpon>TruckLoadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckLoadItemForm.resx">
+      <DependentUpon>TruckLoadItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckLoadListForm.resx">
+      <DependentUpon>TruckLoadListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckLoadReferenceForm.resx">
+      <DependentUpon>TruckLoadReferenceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckReturnForm.resx">
+      <DependentUpon>TruckReturnForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckReturnForm2.resx">
+      <DependentUpon>TruckReturnForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckReturnItemForm.resx">
+      <DependentUpon>TruckReturnItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TruckReturnListForm.resx">
+      <DependentUpon>TruckReturnListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UnitForm.resx">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UnitListForm.resx">
+      <DependentUpon>UnitListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UnitParameterForm.resx">
+      <DependentUpon>UnitParameterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminPasswordForm.resx">
+      <DependentUpon>AdminPasswordForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RequestPasswordForm.resx">
+      <DependentUpon>RequestPasswordForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserListForm.resx">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleTripForm.resx">
+      <DependentUpon>VehicleTripForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleForm.resx">
+      <DependentUpon>VehicleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleListForm.resx">
+      <DependentUpon>VehicleListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorTypeForm.resx">
+      <DependentUpon>VendorTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorTypeListForm.resx">
+      <DependentUpon>VendorTypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorCenterForm.resx">
+      <DependentUpon>VendorCenterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorDiscountedItemForm.resx">
+      <DependentUpon>VendorDiscountedItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorForm.resx">
+      <DependentUpon>VendorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorListForm.resx">
+      <DependentUpon>VendorListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkersCompForm.resx">
+      <DependentUpon>WorkersCompForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkersCompListForm.resx">
+      <DependentUpon>WorkersCompListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessageResource.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6E5AEA57-EB1C-435D-838E-15207F5F54DD}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBooks.Core\NBooks.Core.csproj">
+      <Project>{E8F09F0D-DE0F-4B4C-9635-87E96225B7AD}</Project>
+      <Name>NBooks.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBooks.Data\NBooks.Data.csproj">
+      <Project>{981D5953-FB7A-4299-839A-15082AA082C9}</Project>
+      <Name>NBooks.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets')" />
+</Project>
