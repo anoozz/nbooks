@@ -1,0 +1,4 @@
+language: csharp
+solution: src/NBooks.sln
+install:
+    - nuget restore src/NBooks.sln
