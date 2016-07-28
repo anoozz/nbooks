@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ItemCommandsTests.cs" />
     <Compile Include="Controllers\ItemControllerTests.cs" />
     <Compile Include="MigrationTester.cs" />
     <Compile Include="Models\AccountTests.cs" />
@@ -104,6 +105,7 @@
   <ItemGroup>
     <Folder Include="Models" />
     <Folder Include="Controllers" />
+    <Folder Include="Commands" />
     <Folder Include="Views" />
     <Folder Include="Util" />
   </ItemGroup>

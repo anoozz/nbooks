@@ -17,6 +17,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using NBooks.Core.Repositories;
 using NBooks.Core.Models;
 using NHibernate;
@@ -31,14 +32,18 @@ namespace NBooks.Data.NHibernate
 		
 		public IList<Item> FindActive()
 		{
-			IQuery query = NHibernateHelper.OpenSession().CreateQuery("from Item where inactive = :inactive order by type, name");
+			IQuery query = NHibernateHelper
+				.OpenSession()
+				.CreateQuery("from Item where inactive = :inactive order by type, name");
 			query.SetBoolean("inactive", false);
 			return query.List<Item>();
 		}
 		
 		public Item ReadByName(string name)
 		{
-			IQuery query = NHibernateHelper.OpenSession().CreateQuery("from Item where name = :name and inactive = :inactive");
+			IQuery query = NHibernateHelper
+				.OpenSession()
+				.CreateQuery("from Item where name = :name and inactive = :inactive");
 			query.SetString("name", name);
 			query.SetBoolean("inactive", false);
 			return query.UniqueResult<Item>();
@@ -46,17 +51,26 @@ namespace NBooks.Data.NHibernate
 		
 		public IList<Item> FindByName(string name)
 		{
-			return NHibernateHelper.OpenSession().CreateQuery("from Item where inactive = 0 and name like '%" + name + "%' order by type, name").List<Item>();
+			return NHibernateHelper
+				.OpenSession()
+				.CreateQuery("from Item where inactive = 0 and name like '%" + name + "%' order by type, name")
+				.List<Item>();
 		}
 		
         public IList<Item> FindByUnitMeasure(string unit)
         {
-            return NHibernateHelper.OpenSession().CreateQuery("from Item where unit_measure like '%" + unit + "%' order by type, name").List<Item>();
+            return NHibernateHelper
+            	.OpenSession()
+            	.CreateQuery("from Item where unit_measure like '%" + unit + "%' order by type, name")
+            	.List<Item>();
 		}
 		
 		public IList<Item> FindByDescription(string description)
 		{
-			return NHibernateHelper.OpenSession().CreateQuery("from Item where description like '%" + description + "%' order by type, name").List<Item>();
+			return NHibernateHelper
+				.OpenSession()
+				.CreateQuery("from Item where description like '%" + description + "%' order by type, name")
+				.List<Item>();
 		}
 		
 		public void MakeInactive(Item item)
@@ -65,7 +79,7 @@ namespace NBooks.Data.NHibernate
 			SaveOrUpdate(item);
 		}
 		
-		public System.Data.DataSet FindActiveDS()
+		public DataSet FindActiveDS()
 		{
 			throw new NotImplementedException();
 		}

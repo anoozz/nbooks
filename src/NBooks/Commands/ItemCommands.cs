@@ -39,14 +39,14 @@ namespace NBooks.Commands
 		public override void Run()
 		{
 			ItemForm form = new ItemForm();
-			IItemRepository itemDao = new NHibernateItemRepository();
-			IUnitRepository unitDao = new NHibernateUnitRepository();
-			IVendorRepository vendorDao = new NHibernateVendorRepository();
+			IItemRepository itemRepository = new NHibernateItemRepository();
+			IUnitRepository unitRepository = new NHibernateUnitRepository();
+			IVendorRepository vendorRepository = new NHibernateVendorRepository();
 			
-			form.UnitsList += delegate { form.Units = unitDao.FindActive(); };
-			form.VendorsList += delegate { form.Vendors = vendorDao.FindActive(); };
+			form.UnitsList += delegate { form.Units = unitRepository.FindActive(); };
+			form.VendorsList += delegate { form.Vendors = vendorRepository.FindActive(); };
 			form.ItemSave += delegate(object sender, ItemEventArgs e) { 
-				itemDao.SaveOrUpdate(e.Item);
+				itemRepository.SaveOrUpdate(e.Item);
 				form.Close();
 			};
 			WorkbenchSingleton.AddChild(form);

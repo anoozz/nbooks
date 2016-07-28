@@ -4,3 +4,5 @@
 
 src/NBooks/NBooks.csproj.user
 /src/packages
+src/NBooks.v11.suo
+src/NBooks/StyleCop.Cache

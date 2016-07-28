@@ -9,13 +9,11 @@
     <AssemblyName>nbooks</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Windward - Ian\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SourceAnalysisOverrideSettingsFile>..\Settings.StyleCop</SourceAnalysisOverrideSettingsFile>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <ApplicationIcon>
-    </ApplicationIcon>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <!--<ManifestCertificateThumbprint>EC4697B291096C5B153A5D852E41E3D1C4B7AA19</ManifestCertificateThumbprint>
     <ManifestKeyFile>NBooks_TemporaryKey.pfx</ManifestKeyFile>
@@ -42,6 +40,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NoWin32Manifest>False</NoWin32Manifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <PlatformTarget>x86</PlatformTarget>
