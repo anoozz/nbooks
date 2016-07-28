@@ -1,9 +1,5 @@
 /bin
-/src/Core/obj
-/src/Core/bin
-/src/NBooks/obj
-/src/NBooks.Core/bin
-/src/NBooks.Core/obj
-/src/NBooks.Data/bin
-/src/NBooks.Data/obj
-/src/NBooks.Tests/obj
+/src/**/obj
+/src/**/bin
+
+src/NBooks/NBooks.csproj.user
