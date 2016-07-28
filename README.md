@@ -4,4 +4,5 @@
 
 Simple quickbooks clone application
 
-[installer](https://raw.githubusercontent.com/iescarro/nbooks/master/src/NBooks/publish/nbooks.application)
+## Installer
+Get the installer [here](https://raw.githubusercontent.com/iescarro/nbooks/master/src/NBooks/publish/nbooks.application).
