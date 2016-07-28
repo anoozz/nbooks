@@ -4,4 +4,4 @@
 
 Simple quickbooks clone application
 
-![installer](https://raw.githubusercontent.com/iescarro/nbooks/master/src/NBooks/publish/nbooks.application)
+[installer](https://raw.githubusercontent.com/iescarro/nbooks/master/src/NBooks/publish/nbooks.application)
