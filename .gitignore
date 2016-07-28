@@ -3,3 +3,4 @@
 /src/**/bin
 
 src/NBooks/NBooks.csproj.user
+/src/packages
